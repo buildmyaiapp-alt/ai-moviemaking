@@ -1,0 +1,2394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Your Dream Film in 30 Min Using AI – No Editing Skills Needed</title>
+  <!-- Preconnect for speed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://connect.facebook.net"/>
+  <!-- Load fonts async (non-blocking) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Caveat:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet"/></noscript>
+  <!-- Facebook Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'YOUR_PIXEL_ID');
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent', {
+    content_name: 'AI Moviemaking Workshop',
+    content_category: 'Online Workshop',
+    content_type: 'product',
+    value: 99,
+    currency: 'INR'
+  });
+  </script>
+  <!-- Pixel image fallbacks — fire even when JS is blocked -->
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=ViewContent&noscript=1"/></noscript>
+  <!-- End Facebook Pixel -->
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "YOUR_CLARITY_ID");
+  </script>
+  <!-- End Microsoft Clarity -->
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    :root{
+      --navy:#0d1b6e;
+      --navy2:#1a237e;
+      --red:#e8251a;
+      --red2:#ff3333;
+      --yellow:#5AC8FA;
+      --blue:#1565c0;
+      --lightbg:#f5f5f7;
+      --white:#fff;
+      --text:#222;
+      --muted:#555;
+      --border:#e0e0e0;
+    }
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',sans-serif;background:#fff;color:var(--text);overflow-x:hidden;}
+
+    /* ── PILL BUTTON TOP ── */
+    .top-pill-wrap{text-align:center;padding:0;}
+    .top-pill{
+      display:block;
+      background:#1a1a2e;
+      color:#ffffff;
+      font-size:14px;font-weight:800;
+      padding:11px 16px;
+      letter-spacing:.3px;
+      border-bottom:2px solid #5AC8FA;
+      font-family:Arial,sans-serif;
+    }
+
+    /* ── HERO ── */
+    .hero{padding:48px 24px 56px;text-align:center;background:linear-gradient(160deg,#060d2e 0%,#0d1b6e 60%,#1a2f8a 100%);}
+    .hero h1{
+      font-size:clamp(28px,4vw,54px);font-weight:900;
+      color:#fff;line-height:1.18;margin-bottom:14px;max-width:860px;margin-left:auto;margin-right:auto;
+    }
+    .hero h1 .hl{background:var(--yellow);padding:0 4px;border-radius:3px;color:#0d1b6e;}
+    .hero h1 .ul{text-decoration:underline;text-underline-offset:4px;color:#fff;}
+    .hero-sub{font-size:18px;color:rgba(255,255,255,.8);font-style:italic;margin-bottom:22px;}
+    .no-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:32px;}
+    .no-badge{
+      display:flex;align-items:center;gap:8px;
+      border:1px solid rgba(255,255,255,.25);border-radius:8px;
+      padding:10px 20px;font-size:14px;font-weight:600;color:#fff;
+      background:rgba(255,255,255,.1);backdrop-filter:blur(8px);
+    }
+    .no-badge .ck{color:var(--yellow);font-size:16px;font-weight:900;}
+
+    /* Hero 2col */
+    .hero-2col{
+      display:grid;grid-template-columns:2.2fr 1fr;gap:32px;
+      max-width:1400px;margin:0 auto;text-align:left;
+    }
+    .hero-video-box{
+      border-radius:16px;overflow:hidden;
+      border:3px solid rgba(255,255,255,.3);
+      width:100%;
+    }
+    .hero-video-header{
+      background:var(--navy);color:#fff;
+      padding:13px 20px;font-size:15px;font-weight:700;
+      display:flex;align-items:center;gap:8px;
+    }
+    .hero-video-thumb{
+      background:#000;aspect-ratio:16/9;
+      display:flex;align-items:center;justify-content:center;
+      position:relative;cursor:pointer;
+    }
+    .hero-video-thumb img{width:100%;height:100%;object-fit:cover;opacity:.75;}
+    .play-btn{
+      position:absolute;width:64px;height:64px;border-radius:50%;
+      background:rgba(255,255,255,.9);
+      display:flex;align-items:center;justify-content:center;
+      font-size:22px;color:var(--navy);
+    }
+
+    .hero-right-box{
+      background:var(--navy);border-radius:14px;
+      padding:28px 24px;display:flex;flex-direction:column;gap:0;
+      position:relative;
+    }
+    .live-badge{
+      position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+      background:#fff;border:2px solid var(--border);border-radius:50%;
+      width:40px;height:40px;display:flex;align-items:center;justify-content:center;
+      font-size:10px;font-weight:800;color:var(--navy);text-align:center;line-height:1.1;
+    }
+    .hero-bullets{display:flex;flex-direction:column;gap:0;margin-top:10px;}
+    .hero-bullet{
+      display:flex;gap:14px;align-items:flex-start;
+      padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1);
+    }
+    .hero-bullet:last-child{border:none;}
+    .hbck{
+      width:22px;height:22px;border-radius:50%;
+      background:var(--blue);
+      border:3px solid rgba(255,255,255,.3);
+      display:flex;align-items:center;justify-content:center;
+      flex-shrink:0;margin-top:2px;
+    }
+    .hbck::after{content:'';width:7px;height:7px;border-radius:50%;background:#fff;}
+    .hero-bullet p{font-size:14px;color:rgba(255,255,255,.9);line-height:1.6;}
+    .hero-bullet p strong{color:#fff;}
+
+    /* ── DIVIDER ── */
+    .sec-divider{width:60px;height:3px;background:var(--navy2);margin:14px auto 0;border-radius:2px;}
+
+    /* ── EVENT DETAILS ── */
+    .event-details{background:var(--lightbg);padding:40px 20px;}
+    .event-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:12px;
+      max-width:600px;margin:0 auto;
+    }
+    .event-box{
+      background:#fff;border:1px solid var(--border);border-radius:12px;
+      padding:18px 20px;display:flex;gap:14px;align-items:center;
+    }
+    .event-icon{
+      width:40px;height:40px;border-radius:50%;background:var(--navy);
+      display:flex;align-items:center;justify-content:center;font-size:18px;
+      flex-shrink:0;
+    }
+    .event-box .lbl{font-size:11px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;}
+    .event-box .val{font-size:15px;font-weight:800;color:var(--navy);}
+
+    /* ── CTA BLOCK ── */
+    .cta-block{background:#fff;padding:32px 20px;text-align:center;}
+    .cta-block.gray{background:var(--lightbg);}
+    @keyframes btnShine {
+      0%   { left: -100%; }
+      60%  { left: 130%; }
+      100% { left: 130%; }
+    }
+    .enroll-btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      background:var(--red);color:#fff;
+      font-size:20px;font-weight:900;
+      padding:18px 60px;border-radius:8px;
+      text-decoration:none;
+      box-shadow:0 6px 24px rgba(232,37,26,.35);
+      transition:.2s;max-width:600px;width:100%;
+      position:relative;overflow:hidden;
+    }
+    .enroll-btn::after {
+      content:'';
+      position:absolute;top:0;left:-100%;
+      width:60%;height:100%;
+      background:linear-gradient(120deg,transparent 0%,rgba(255,255,255,0.35) 50%,transparent 100%);
+      animation:btnShine 2.5s infinite;
+      pointer-events:none;
+    }
+    .enroll-btn:hover{background:var(--red2);transform:translateY(-2px);}
+    .seats-badge{
+      position:absolute;top:-14px;right:20px;
+      background:#111;color:#fff;
+      font-size:11px;font-weight:800;
+      padding:4px 12px;border-radius:20px;
+    }
+    .enroll-btn .old{text-decoration:line-through;opacity:.6;font-weight:400;font-size:16px;}
+    .progress-bar{
+      display:flex;gap:4px;justify-content:center;margin:14px auto;max-width:600px;
+    }
+    .pb-box{
+      width:28px;height:24px;background:#ddd;border-radius:4px;
+      transition:background 0.15s ease, transform 0.1s ease;
+    }
+    .pb-box.done{background:var(--red);transform:scaleY(1.08);}
+    .hurry{font-size:14px;color:#555;display:flex;align-items:center;justify-content:center;gap:6px;}
+
+    /* ── STORE TRUST BAR ── */
+    .store-trust-bar{
+      background:#0a0f2e;
+      padding:24px 20px 20px;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,0.07);
+      border-bottom:1px solid rgba(255,255,255,0.07);
+    }
+    .store-trust-label{
+      font-size:13px;font-weight:700;
+      color:rgba(255,255,255,0.6);
+      letter-spacing:1px;text-transform:uppercase;
+      margin-bottom:14px;
+    }
+    .store-badges{
+      display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;
+      margin-bottom:12px;
+    }
+    .store-badge-link{
+      display:inline-block;
+      transition:transform 0.2s ease, opacity 0.2s ease;
+      opacity:0.92;
+    }
+    .store-badge-link:hover{transform:translateY(-2px);opacity:1;}
+    .store-trust-sub{
+      font-size:12px;color:rgba(255,255,255,0.4);
+      margin-top:4px;
+    }
+
+    /* ── SECTION HEADINGS ── */
+    .sec-wrap{padding:70px 20px;}
+    .sec-wrap.gray{background:var(--lightbg);}
+    .sec-inner{max-width:1040px;margin:0 auto;}
+    .sec-title{
+      font-size:clamp(24px,3.5vw,42px);font-weight:900;
+      color:var(--navy);text-align:center;line-height:1.2;margin-bottom:6px;
+    }
+    .sec-title .hl{background:var(--yellow);padding:0 4px;border-radius:3px;}
+    .sec-title .ul{text-decoration:underline;text-underline-offset:4px;}
+    .sec-title .r{color:var(--red);}
+    .sec-sub{text-align:center;font-size:16px;color:#555;margin-top:8px;font-style:italic;}
+
+    /* ── CLIENTS ── */
+    .clients-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;
+    }
+    .client-card{
+      background:#fff;border:1px solid var(--border);border-radius:14px;
+      padding:28px 16px;text-align:center;
+    }
+    .client-av{
+      width:80px;height:80px;border-radius:50%;
+      background:linear-gradient(135deg,#333,#666);
+      margin:0 auto 14px;overflow:hidden;
+      display:flex;align-items:center;justify-content:center;font-size:32px;
+    }
+    .client-name{font-size:16px;font-weight:800;color:var(--navy2);margin-bottom:4px;}
+    .client-role{font-size:12px;color:#777;margin-bottom:12px;}
+    .client-ig{
+      display:flex;align-items:center;justify-content:center;gap:6px;
+      font-size:13px;font-weight:700;color:#555;
+    }
+    .ig-icon{font-size:18px;}
+
+    /* ── RESULTS 2COL ── */
+    .results-2col{
+      display:grid;grid-template-columns:1fr 1fr;gap:24px;
+      align-items:center;margin-top:40px;
+    }
+    .results-img{border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+    .results-img img{width:100%;display:block;}
+    .results-box{
+      background:var(--navy);border-radius:14px;padding:32px 28px;
+    }
+    .results-box h3{font-size:18px;font-style:italic;color:rgba(255,255,255,.8);margin-bottom:20px;}
+    .rb-list{display:flex;flex-direction:column;gap:0;}
+    .rb-item{
+      display:flex;gap:12px;align-items:flex-start;
+      padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);
+    }
+    .rb-item:last-child{border:none;}
+    .rb-dot{
+      width:20px;height:20px;border-radius:50%;
+      background:var(--blue);border:3px solid rgba(255,255,255,.25);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;
+    }
+    .rb-dot::after{content:'';width:6px;height:6px;border-radius:50%;background:#fff;}
+    .rb-item p{font-size:14px;color:rgba(255,255,255,.85);line-height:1.55;}
+    .rb-item p strong{color:#fff;}
+
+    /* ── FUNNEL PIPES ── */
+    .funnel-wrap{margin-top:40px;text-align:center;}
+    .funnel-pipes{
+      display:flex;justify-content:center;align-items:flex-end;gap:0;
+      margin-bottom:20px;flex-wrap:nowrap;
+    }
+    .pipe-item{display:flex;flex-direction:column;align-items:center;flex:1;max-width:180px;}
+    .pipe-circle{
+      width:64px;height:64px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-size:26px;
+      box-shadow:0 4px 16px rgba(0,0,0,.15);
+      margin-bottom:8px;
+    }
+    .pipe-circle.c1{background:linear-gradient(135deg,#f5a623,#f39c12);}
+    .pipe-circle.c2{background:linear-gradient(135deg,#ff6b35,#e74c3c);}
+    .pipe-circle.c3{background:linear-gradient(135deg,#e74c3c,#c0392b);}
+    .pipe-circle.c4{background:linear-gradient(135deg,#e91e8c,#9b59b6);}
+    .pipe-circle.c5{background:linear-gradient(135deg,#9b59b6,#6c3483);}
+    .pipe-connector{width:40px;height:6px;background:linear-gradient(90deg,#ddd,#bbb);margin-bottom:36px;flex-shrink:0;}
+    .pipe-num{font-size:22px;font-weight:700;color:#999;margin-bottom:6px;}
+    .pipe-label{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:4px;}
+    .pipe-desc{font-size:11px;color:#777;line-height:1.5;}
+
+    /* ── VIDEO TESTIMONIALS ── */
+    .vt-arrows{display:flex;justify-content:center;gap:80px;margin-bottom:20px;}
+    .vt-arrow{
+      width:42px;height:42px;border-radius:50%;
+      border:2px solid var(--red);
+      display:flex;align-items:center;justify-content:center;
+      color:var(--red);font-size:16px;font-weight:900;
+    }
+    .vt-grid{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;}
+    /* Person testimonial card */
+    .vt-card{
+      background:#fff;border:1px solid var(--border);border-radius:16px;
+      overflow:hidden;width:220px;flex-shrink:0;
+      box-shadow:0 4px 20px rgba(0,0,0,.08);
+      display:flex;flex-direction:column;align-items:center;padding:22px 16px 18px;
+      text-align:center;
+    }
+    .vt-avatar{
+      width:110px;height:110px;border-radius:50%;overflow:hidden;
+      border:3px solid var(--yellow);margin-bottom:12px;flex-shrink:0;
+    }
+    .vt-avatar img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;}
+    .vt-name{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:4px;}
+    .vt-built{font-size:11px;color:#888;margin-bottom:10px;line-height:1.4;}
+    .vt-quote{
+      font-size:12px;color:#444;font-style:italic;line-height:1.6;
+      border-top:1px solid #f0f0f0;padding-top:10px;margin-top:auto;
+    }
+    /* Logo/company testimonial card */
+    .vt-logo-card{
+      background:#fff;border:1px solid var(--border);border-radius:16px;
+      overflow:hidden;width:220px;flex-shrink:0;
+      box-shadow:0 4px 20px rgba(0,0,0,.08);
+      display:flex;flex-direction:column;align-items:center;padding:22px 16px 18px;
+      text-align:center;
+    }
+    .vt-logo-wrap{
+      width:100px;height:100px;border-radius:12px;overflow:hidden;
+      margin-bottom:12px;display:flex;align-items:center;justify-content:center;
+      background:#f8f8f8;border:1px solid #eee;
+    }
+    .vt-logo-wrap img{width:100%;height:100%;object-fit:contain;padding:6px;}
+    .vt-biz-name{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:4px;}
+    .vt-biz-type{font-size:11px;color:#888;margin-bottom:10px;}
+    .vt-biz-quote{
+      font-size:12px;color:#444;font-style:italic;line-height:1.6;
+      border-top:1px solid #f0f0f0;padding-top:10px;margin-top:auto;
+    }
+
+    /* ── OLD WAY VS NEW WAY ── */
+    .compare-wrap{
+      display:grid;grid-template-columns:1fr 1fr;gap:40px;
+      align-items:start;margin-top:40px;
+    }
+    .compare-story{font-size:15px;color:#444;line-height:1.9;}
+    .compare-story p{margin-bottom:16px;}
+    .compare-table{border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+    .compare-heads{display:grid;grid-template-columns:1fr 1fr;}
+    .compare-head{
+      padding:12px 16px;font-size:13px;font-weight:800;text-align:center;
+    }
+    .compare-head.old{background:#f5a623;color:#fff;}
+    .compare-head.new{background:#27ae60;color:#fff;}
+    .compare-row{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--border);}
+    .compare-cell{
+      padding:10px 14px;font-size:12px;
+      display:flex;align-items:center;gap:8px;
+      border-right:1px solid var(--border);
+    }
+    .compare-cell:last-child{border-right:none;}
+    .compare-cell.old-cell{color:#777;}
+    .compare-cell.new-cell{color:#27ae60;font-weight:700;background:#f0fff4;}
+    .cx{color:var(--red);font-size:16px;font-weight:900;flex-shrink:0;}
+    .cv{color:#27ae60;font-size:16px;font-weight:900;flex-shrink:0;}
+    .compare-label{font-size:9px;font-weight:700;border-radius:3px;padding:1px 5px;flex-shrink:0;}
+    .compare-label.manual{background:#ff9800;color:#fff;}
+    .compare-label.auto{background:#27ae60;color:#fff;}
+
+    /* ── AGENDA ── */
+    .agenda-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;
+    }
+    .agenda-card{
+      background:#fff;border:1px solid var(--border);border-radius:12px;
+      overflow:hidden;
+    }
+    .agenda-img{
+      position:relative;aspect-ratio:16/9;background:#1a3a6b;
+      display:flex;align-items:flex-end;
+    }
+    .agenda-img img{width:100%;height:100%;object-fit:cover;position:absolute;}
+    .agenda-day-badge{
+      position:absolute;top:0;left:0;z-index:2;
+      background:var(--yellow);color:var(--navy);
+      font-size:12px;font-weight:800;
+      padding:5px 12px;margin:10px;border-radius:6px;
+      display:flex;align-items:center;gap:4px;
+    }
+    .agenda-day-title{
+      position:absolute;bottom:0;left:0;right:0;z-index:1;
+      background:linear-gradient(transparent,rgba(0,0,0,.7));
+      color:#fff;font-size:16px;font-weight:900;
+      padding:20px 14px 10px;
+    }
+    .agenda-body{padding:18px 16px;}
+    .ag-item{
+      display:flex;gap:10px;align-items:flex-start;
+      padding:8px 0;border-bottom:1px solid #f0f0f0;
+      font-size:13px;color:#444;line-height:1.5;
+    }
+    .ag-item:last-child{border:none;}
+    .ag-dot{
+      width:16px;height:16px;border-radius:50%;background:var(--blue);
+      border:3px solid rgba(21,101,192,.25);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;
+    }
+    .ag-dot::after{content:'';width:5px;height:5px;border-radius:50%;background:#fff;}
+
+    /* ── BONUSES ── */
+    .bonus-mockup{text-align:center;margin:30px 0;}
+    .bonus-mockup img{max-width:600px;width:100%;}
+    .bonuses-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:10px;
+    }
+    .bonus-card{
+      background:#fff;border:1px solid var(--border);border-radius:12px;
+      overflow:hidden;
+    }
+    .bonus-tag{
+      display:inline-flex;align-items:center;gap:6px;
+      background:var(--yellow);color:var(--navy);
+      font-size:12px;font-weight:800;
+      padding:6px 14px;border-radius:6px;
+      margin:14px 0 8px 14px;
+    }
+    .bonus-img-wrap{
+      padding:0 14px;margin-bottom:0;
+    }
+    .bonus-img-wrap img{width:100%;border-radius:8px;display:block;}
+    .bonus-content{padding:16px 18px;}
+    .bonus-title{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:12px;}
+    .bonus-pts{display:flex;flex-direction:column;gap:8px;}
+    .bonus-pt{
+      display:flex;gap:10px;align-items:flex-start;
+      font-size:13px;color:#444;line-height:1.5;
+    }
+    .bdot{
+      width:16px;height:16px;border-radius:50%;background:var(--blue);
+      border:3px solid rgba(21,101,192,.2);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;
+    }
+    .bdot::after{content:'';width:5px;height:5px;border-radius:50%;background:#fff;}
+    .bonus-footer{
+      background:var(--navy);color:#fff;
+      text-align:center;padding:10px;
+      font-size:13px;font-weight:800;letter-spacing:1px;
+    }
+    .bonus-footer .strike{text-decoration:line-through;opacity:.5;font-weight:400;margin-right:6px;}
+
+    /* ── PRICING ── */
+    .price-section{padding:70px 20px;text-align:center;background:#fff;}
+    .handwritten{
+      font-family:'Caveat',cursive;
+      font-size:32px;font-weight:700;color:var(--navy);
+      margin-bottom:30px;display:block;
+    }
+    .price-table{
+      max-width:640px;margin:0 auto 28px;
+      border:2px solid var(--navy);border-radius:12px;overflow:hidden;
+    }
+    .pt-header{
+      background:var(--navy);color:#fff;
+      font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+      padding:6px 16px;display:inline-block;
+      border-radius:4px;margin:-1px 0 0 -1px;
+    }
+    .pt-row{
+      display:grid;grid-template-columns:1fr 1fr 1fr;
+      border-bottom:1px solid var(--border);
+    }
+    .pt-row:last-child{border:none;}
+    .pt-row.active{background:#fff;border:none;}
+    .pt-row.faded{background:#f9f9f9;}
+    .pt-cell{
+      padding:14px 16px;font-size:14px;font-weight:700;color:#333;
+      border-right:1px solid var(--border);
+    }
+    .pt-cell:last-child{border:none;color:#aaa;}
+    .pt-cell.price{color:#27ae60;font-size:20px;font-weight:900;}
+    .pt-cell.price-faded{color:#bbb;font-size:16px;}
+    .price-today{
+      font-size:clamp(22px,3vw,36px);font-weight:900;color:#111;
+      margin-bottom:24px;
+    }
+    .price-today .strike{color:#aaa;text-decoration:line-through;font-weight:400;}
+    .price-today .green{color:#27ae60;}
+
+    /* ── ABOUT ── */
+    .about-section{padding:60px 20px;}
+    .about-box{
+      max-width:1000px;margin:0 auto;
+      background:var(--navy);border-radius:20px;
+      padding:50px;
+      display:grid;grid-template-columns:280px 1fr;gap:40px;align-items:center;
+    }
+    .about-photo-circle{
+      width:240px;height:240px;border-radius:50%;
+      border:4px solid rgba(255,255,255,.2);
+      overflow:hidden;background:#1a3a6b;
+      display:flex;align-items:center;justify-content:center;font-size:80px;
+    }
+    .about-box h2{
+      font-size:clamp(22px,2.5vw,32px);font-weight:900;color:#fff;
+      margin-bottom:8px;text-align:left;
+    }
+    .about-divider{width:60px;height:3px;background:rgba(255,255,255,.3);margin-bottom:24px;border-radius:2px;}
+    .about-list{display:flex;flex-direction:column;gap:0;}
+    .about-item{
+      display:flex;gap:14px;align-items:flex-start;
+      padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);
+    }
+    .about-item:last-child{border:none;}
+    .about-dot{
+      width:20px;height:20px;border-radius:50%;background:var(--blue);
+      border:3px solid rgba(255,255,255,.2);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;
+    }
+    .about-dot::after{content:'';width:6px;height:6px;border-radius:50%;background:#fff;}
+    .about-item p{font-size:15px;color:rgba(255,255,255,.9);line-height:1.55;}
+    .about-item p strong, .about-item p u{color:#fff;}
+    .about-item p u{text-underline-offset:3px;}
+
+    /* ── FAQ ── */
+    .faq-section{background:var(--lightbg);padding:70px 20px;}
+    .faq-list{max-width:760px;margin:36px auto 0;}
+    details{
+      background:#fff;border:1px solid var(--border);border-radius:10px;
+      margin-bottom:10px;overflow:hidden;
+    }
+    summary{
+      padding:18px 22px;font-size:15px;font-weight:600;color:var(--navy);
+      cursor:pointer;list-style:none;
+      display:flex;justify-content:space-between;align-items:center;
+    }
+    summary::after{content:'▾';font-size:18px;color:#999;}
+    details[open] summary::after{content:'▴';}
+    summary::-webkit-details-marker{display:none;}
+    .faq-body{padding:0 22px 18px;font-size:14px;color:#555;line-height:1.75;}
+
+    /* ── STICKY ── */
+    .sticky{
+      position:fixed;bottom:0;left:0;right:0;z-index:999;
+      background:#fff;border-top:1px solid var(--border);
+      display:flex;align-items:center;justify-content:space-between;
+      padding:10px 16px;gap:10px;
+      box-shadow:0 -4px 20px rgba(0,0,0,.08);
+    }
+    .sticky-left{display:flex;flex-direction:column;gap:2px;flex-shrink:0;}
+    .sticky-price{font-size:20px;font-weight:900;color:var(--red);}
+    .sticky-price .strike{text-decoration:line-through;color:#aaa;font-size:15px;font-weight:400;margin-right:4px;}
+    .sticky-close{font-size:12px;color:#777;font-weight:600;}
+    .sticky-center{font-size:12px;color:#666;text-align:center;flex:1;}
+    .sticky-center strong{color:var(--red);}
+    @media(max-width:500px){
+      .sticky-center{display:none;}
+      .sticky-btn{padding:12px 18px;font-size:13px;}
+    }
+    .sticky-btn{
+      background:var(--red);color:#fff;
+      font-size:14px;font-weight:800;
+      padding:12px 24px;border-radius:8px;
+      text-decoration:none;white-space:nowrap;
+      box-shadow:0 4px 14px rgba(232,37,26,.3);
+      transition:.2s;display:flex;flex-direction:column;align-items:center;
+      line-height:1.3;position:relative;overflow:hidden;
+    }
+    .sticky-btn::after{
+      content:'';position:absolute;top:0;left:-100%;
+      width:60%;height:100%;
+      background:linear-gradient(120deg,transparent 0%,rgba(255,255,255,0.35) 50%,transparent 100%);
+      animation:btnShine 2.5s infinite;pointer-events:none;
+    }
+    .sticky-btn:hover{background:var(--red2);}
+    .sticky-btn small{font-size:10px;font-weight:600;opacity:.8;}
+
+    /* ── FOOTER ── */
+    footer{
+      background:#fff;text-align:center;padding:24px 20px;font-size:12px;color:#888;
+      border-top:1px solid var(--border);padding-bottom:80px;
+      line-height:1.8;
+    }
+    footer a{color:var(--blue);}
+
+    /* ── SVG PIPE SYSTEM ── */
+    .pipe-svg-wrap{max-width:1000px;margin:30px auto 0;overflow-x:auto;}
+    .pipe-svg-wrap svg{min-width:600px;}
+    .pipe-labels{
+      display:flex;justify-content:space-around;
+      max-width:1000px;margin:16px auto 0;padding:0 20px;
+    }
+    .pipe-label-item{text-align:center;flex:1;padding:0 4px;}
+    .pipe-num-big{font-size:30px;font-weight:700;opacity:.85;margin-bottom:4px;}
+    .pipe-label-title{font-size:13px;font-weight:800;margin-bottom:4px;line-height:1.3;}
+    .pipe-label-desc{font-size:11px;color:#777;line-height:1.5;}
+
+    /* ── PHONES PROOF SECTION ── */
+    .phones-proof{padding:70px 20px;background:var(--lightbg);}
+    .phones-proof-inner{max-width:960px;margin:0 auto;text-align:center;}
+    .handwritten-annot{
+      font-family:'Caveat',cursive;
+      font-size:clamp(22px,3vw,30px);font-weight:700;
+      line-height:1.4;
+      max-width:560px;margin:0 auto 24px;
+    }
+    .phones-row{
+      display:flex;justify-content:center;align-items:center;
+      gap:40px;margin:24px 0;flex-wrap:wrap;
+    }
+    .phone-device{
+      width:188px;background:#1c1c1e;
+      border-radius:34px;padding:10px;
+      box-shadow:0 24px 60px rgba(0,0,0,.35);
+      flex-shrink:0;
+    }
+    .phone-device.tilted{
+      transform:perspective(700px) rotateY(-15deg) rotateX(4deg);
+      box-shadow:18px 18px 50px rgba(0,0,0,.4);
+    }
+    .phone-screen{background:#fff;border-radius:26px;overflow:hidden;height:340px;}
+    .ph-topbar{
+      background:#fff;padding:7px 12px 4px;
+      display:flex;justify-content:space-between;align-items:center;
+      font-size:10px;font-weight:700;color:#111;
+      border-bottom:1px solid #f0f0f0;
+    }
+    .ph-gmailbar{
+      padding:5px 10px;font-size:9px;color:#444;font-weight:600;
+      border-bottom:1px solid #eee;display:flex;align-items:center;gap:4px;
+    }
+    .ph-gmailbar .xbtn{margin-left:auto;color:#aaa;font-size:11px;}
+    .ph-filterrow{
+      padding:4px 10px;display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid #eee;
+    }
+    .ph-ftag{
+      background:#f1f3f4;border-radius:10px;
+      padding:2px 7px;font-size:8px;font-weight:600;color:#555;
+    }
+    .ph-sort{padding:3px 10px;font-size:8px;color:#777;border-bottom:1px solid #eee;}
+    .ph-scroll-wrap{overflow:hidden;height:268px;}
+    .ph-scroll-inner{animation:emailScrollUp 14s linear infinite;}
+    @keyframes emailScrollUp{
+      0%{transform:translateY(0);}
+      100%{transform:translateY(-50%);}
+    }
+    .ph-email{
+      padding:7px 10px;border-bottom:1px solid #f0f0f0;
+      display:flex;gap:7px;align-items:flex-start;
+    }
+    .ph-av{
+      width:26px;height:26px;border-radius:50%;background:#4285f4;
+      display:flex;align-items:center;justify-content:center;
+      font-size:11px;color:#fff;font-weight:700;flex-shrink:0;margin-top:1px;
+    }
+    .ph-eb{flex:1;min-width:0;}
+    .ph-er{display:flex;justify-content:space-between;align-items:center;}
+    .ph-ename{font-size:9.5px;font-weight:700;color:#222;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px;}
+    .ph-edate{font-size:8px;color:#999;flex-shrink:0;margin-left:4px;}
+    .ph-esubj{font-size:8.5px;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px;}
+    .ph-eamt{font-size:8.5px;font-weight:700;color:#333;margin-top:1px;}
+    .ph-inbox{display:inline-block;background:#d3e4ff;color:#1a73e8;font-size:7px;font-weight:700;padding:1px 4px;border-radius:2px;margin-left:4px;}
+    .ph-pdf{display:inline-flex;align-items:center;gap:2px;background:#fce8e6;color:#d93025;font-size:7.5px;font-weight:700;padding:2px 5px;border-radius:2px;margin-top:3px;}
+    .red-dnarrows{display:flex;justify-content:center;gap:100px;margin:24px 0 0;}
+    .red-dnarrow{width:42px;height:42px;border-radius:50%;border:2px solid var(--red);display:flex;align-items:center;justify-content:center;color:var(--red);font-size:16px;font-weight:900;}
+
+    /* ── AGENDA ANIMATIONS ── */
+    .agenda-anim{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+
+    /* ── BUILD: VS Code style editor ── */
+    .code-editor{width:168px;background:#1e1e1e;border-radius:10px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.7);font-family:'Courier New',monospace;}
+    .ce-bar{background:#2d2d2d;padding:6px 8px;display:flex;align-items:center;gap:4px;}
+    .ce-dot{width:7px;height:7px;border-radius:50%;}
+    .ced1{background:#ff5f57;} .ced2{background:#febc2e;} .ced3{background:#28c840;}
+    .ce-filename{color:#999;font-size:8px;margin-left:8px;letter-spacing:.3px;}
+    .ce-body{padding:8px 6px 10px;}
+    .ce-row{display:flex;gap:6px;align-items:center;margin-bottom:5px;min-height:11px;}
+    .ce-ln{color:#4a4a4a;font-size:7.5px;width:10px;text-align:right;flex-shrink:0;user-select:none;}
+    .ce-code{font-size:8px;white-space:nowrap;overflow:hidden;clip-path:inset(0 100% 0 0);animation:codeReveal 6s ease-in-out infinite;}
+    .cc1{color:#c586c0;animation-delay:.2s;}
+    .cc2{color:#9cdcfe;animation-delay:.9s;}
+    .cc3{color:#ce9178;animation-delay:1.6s;}
+    .cc4{color:#4ec9b0;animation-delay:2.3s;}
+    .cc5{color:#dcdcaa;animation-delay:3.0s;}
+    .cc6{color:#6a9955;animation-delay:3.7s;}
+    @keyframes codeReveal{
+      0%{clip-path:inset(0 100% 0 0);opacity:0;}
+      4%{opacity:1;}
+      22%{clip-path:inset(0 0% 0 0);}
+      72%{clip-path:inset(0 0% 0 0);opacity:1;}
+      85%{opacity:0;}
+      100%{clip-path:inset(0 100% 0 0);opacity:0;}
+    }
+    .ce-cursor{width:1.5px;height:9px;background:#fff;display:inline-block;vertical-align:middle;margin-left:1px;animation:curBlink .7s step-end infinite;}
+    @keyframes curBlink{0%,100%{opacity:1;}50%{opacity:0;}}
+    .ce-status{background:#0078d4;padding:2px 8px;font-size:7px;color:#fff;display:flex;gap:8px;font-family:monospace;}
+
+    /* ── PAYMENT: phone with notifications ── */
+    .pay-phone{width:84px;height:130px;background:#fff;border-radius:14px;border:3px solid rgba(255,255,255,.5);overflow:hidden;position:relative;box-shadow:0 8px 24px rgba(0,0,0,.35);}
+    .pay-notif{position:absolute;left:0;right:0;top:0;background:#fff;border-bottom:1px solid #eee;padding:5px 7px;transform:translateY(-100%);animation:notifDrop 3.5s ease-in-out infinite;}
+    .pay-notif-2{animation-delay:1.75s;}
+    @keyframes notifDrop{0%{transform:translateY(-100%);opacity:0;}10%{transform:translateY(0);opacity:1;}70%{transform:translateY(0);opacity:1;}85%{transform:translateY(-100%);opacity:0;}100%{transform:translateY(-100%);opacity:0;}}
+    .pay-n-title{font-size:7px;font-weight:800;color:#27ae60;}
+    .pay-n-amt{font-size:10px;font-weight:900;color:#111;}
+    .pay-n-from{font-size:6px;color:#999;}
+    .pay-body{padding:10px 7px;text-align:center;margin-top:34px;}
+    .pay-icon-big{font-size:22px;margin-bottom:4px;}
+    .pay-amt-big{font-size:12px;font-weight:900;color:#111;margin-bottom:6px;}
+    .pay-check{width:22px;height:22px;border-radius:50%;background:#27ae60;color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 4px;animation:checkPulse 1.5s ease-in-out infinite;}
+    @keyframes checkPulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(39,174,96,.4);}50%{transform:scale(1.15);box-shadow:0 0 0 6px rgba(39,174,96,0);}}
+    .pay-ok{font-size:7px;font-weight:800;color:#27ae60;letter-spacing:.5px;}
+    .money-float{position:absolute;font-weight:900;color:#27ae60;animation:moneyRise 2.8s ease-out infinite;opacity:0;}
+    .mf1{font-size:14px;left:8%;bottom:15%;animation-delay:0s;}
+    .mf2{font-size:12px;right:8%;bottom:25%;animation-delay:1s;}
+    .mf3{font-size:16px;left:42%;bottom:10%;animation-delay:2s;}
+    @keyframes moneyRise{0%{transform:translateY(0) rotate(-10deg);opacity:0;}20%{opacity:1;}100%{transform:translateY(-65px) rotate(15deg);opacity:0;}}
+
+    /* ── LAUNCH: Google Play Store card ── */
+    .ps-card{width:168px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.45);}
+    .ps-topbar{background:#fff;padding:5px 8px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #eee;}
+    .ps-app-icon{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,#ff5c00,#f5a623);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+    .ps-info{flex:1;min-width:0;}
+    .ps-appname{font-size:8.5px;font-weight:800;color:#111;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .ps-dev{font-size:7px;color:#01875f;font-weight:600;margin-top:1px;}
+    .ps-rating{display:flex;align-items:center;gap:2px;margin-top:2px;}
+    .ps-stars{color:#f5a623;font-size:8px;letter-spacing:0;}
+    .ps-rnum{font-size:7px;color:#555;font-weight:600;}
+    .ps-screenshots{display:flex;gap:4px;padding:6px 8px;}
+    .ps-thumb{width:44px;height:36px;border-radius:4px;flex-shrink:0;overflow:hidden;border:1px solid #eee;}
+    .ps-thumb-1{background:linear-gradient(135deg,#0d1b6e 0%,#1565c0 100%);}
+    .ps-thumb-2{background:linear-gradient(135deg,#1565c0 0%,#0288d1 100%);}
+    .ps-thumb-3{background:linear-gradient(135deg,#ff5c00 0%,#f5a623 100%);}
+    .ps-bottom{padding:0 8px 8px;}
+    .ps-progress-wrap{height:3px;background:#eee;border-radius:2px;margin-bottom:5px;overflow:hidden;}
+    .ps-progress{height:100%;background:#01875f;border-radius:2px;width:0;animation:psProgress 3.5s ease-in-out infinite;}
+    @keyframes psProgress{0%{width:0%;}55%{width:100%;}80%{width:100%;}85%{opacity:0;}90%,100%{width:0%;opacity:1;}}
+    .ps-btn-row{display:flex;gap:5px;}
+    .ps-btn-install{flex:1;background:#01875f;color:#fff;font-size:7.5px;font-weight:800;text-align:center;padding:5px;border-radius:4px;letter-spacing:.4px;animation:btnSwap 3.5s ease-in-out infinite;}
+    @keyframes btnSwap{0%,50%{content:"INSTALL";background:#01875f;}60%,100%{background:#1a73e8;}}
+    .ps-btn-wish{background:#e8f0fe;color:#1a73e8;font-size:7.5px;font-weight:800;padding:5px 8px;border-radius:4px;}
+    .ps-installed-badge{font-size:7px;color:#01875f;font-weight:700;text-align:center;margin-top:3px;animation:badgeAppear 3.5s ease-in-out infinite;opacity:0;}
+    @keyframes badgeAppear{0%,55%{opacity:0;}65%,90%{opacity:1;}100%{opacity:0;}}
+
+    /* ── APP SHOWCASE ── */
+    .showcase-wrap{position:relative;}
+    .showcase-scroll{display:flex;gap:18px;overflow-x:auto;padding:30px 4px 20px;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;}
+    .showcase-scroll::-webkit-scrollbar{display:none;}
+    .sc-card{scroll-snap-align:center;}
+    /* Dot indicators — mobile only */
+    .showcase-dots{display:none;justify-content:center;gap:7px;margin:4px 0 8px;}
+    .showcase-dots .dot{width:8px;height:8px;border-radius:50%;background:#ccc;transition:background .3s,width .3s;cursor:pointer;}
+    .showcase-dots .dot.active{background:var(--navy);width:22px;border-radius:4px;}
+    @media(max-width:640px){
+      .showcase-dots{display:flex;}
+      .scroll-hint{display:none;}
+    }
+    .sc-card{flex-shrink:0;width:188px;background:#fff;border-radius:16px;border:1px solid var(--border);overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);transition:.2s;}
+    .sc-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(0,0,0,.14);}
+    .sc-phone-wrap{padding:18px 0 14px;display:flex;justify-content:center;}
+    .sc-phone-device{width:96px;height:168px;background:#1c1c1e;border-radius:18px;padding:7px;box-shadow:0 8px 24px rgba(0,0,0,.4);}
+    .sc-phone-screen{background:#f5f5f5;border-radius:13px;height:100%;overflow:hidden;display:flex;flex-direction:column;}
+    /* status bar */
+    .sc-sb{height:7px;display:flex;justify-content:space-between;align-items:center;padding:0 5px;flex-shrink:0;}
+    .sc-sb-t{font-size:4.5px;font-weight:700;color:#fff;}
+    .sc-sb-i{font-size:4px;color:rgba(255,255,255,.9);}
+    /* app bar */
+    .sc-ab{padding:4px 6px 5px;display:flex;align-items:center;gap:3px;flex-shrink:0;}
+    .sc-ab-ttl{font-size:7.5px;font-weight:800;color:#fff;flex:1;}
+    .sc-ab-ic{font-size:9px;color:rgba(255,255,255,.85);}
+    /* content & nav */
+    .sc-content{flex:1;overflow:hidden;background:#fff;}
+    .sc-bnav{display:flex;border-top:1px solid #ebebeb;background:#fff;flex-shrink:0;padding:2px 0 2px;}
+    .sc-bnav-i{flex:1;display:flex;flex-direction:column;align-items:center;gap:.5px;}
+    .sc-bnav-em{font-size:7.5px;line-height:1.4;}
+    .sc-bnav-lb{font-size:4px;font-weight:700;}
+    @keyframes dotPulse{0%,100%{opacity:.4;}50%{opacity:1;}}
+    /* card body */
+    .sc-card-body{padding:12px 14px 14px;}
+    .sc-app-name{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:4px;}
+    .sc-app-desc{font-size:10.5px;color:#666;line-height:1.5;margin-bottom:8px;}
+    .sc-tags{display:flex;gap:5px;flex-wrap:wrap;}
+    .sc-tag{font-size:9.5px;font-weight:600;padding:2px 8px;border-radius:20px;background:#f0f0f0;color:#555;}
+    .sc-tag.built{background:#f0fff4;color:#27ae60;font-weight:700;}
+    .scroll-hint{text-align:center;font-size:12px;color:#aaa;margin-top:4px;}
+
+    /* ── WHATSAPP REVIEWS ── */
+    .wa-section{background:var(--navy);padding:70px 20px;}
+    .wa-section .sec-title{color:#fff;}
+    .wa-green-sub{font-family:'Caveat',cursive;font-size:28px;color:#25d366;text-align:center;margin:12px 0 36px;font-weight:700;}
+    .wa-grid{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;max-width:1100px;margin:0 auto;}
+    .wa-img-card{border-radius:14px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.45);width:190px;flex-shrink:0;}
+    .wa-img-card img{width:100%;display:block;}
+    /* Card = real WhatsApp window */
+    .wa-card{background:#e5ddd5;border-radius:14px;overflow:hidden;box-shadow:0 8px 36px rgba(0,0,0,.5);display:flex;flex-direction:column;}
+    .wa-sb{background:#1f2c34;padding:5px 14px 3px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;}
+    .wa-sb-t{font-size:9.5px;font-weight:700;color:#fff;}
+    .wa-sb-i{font-size:8.5px;color:rgba(255,255,255,.85);}
+    .wa-hdr{background:#075e54;padding:7px 10px;display:flex;align-items:center;gap:7px;flex-shrink:0;}
+    .wa-back{color:rgba(255,255,255,.9);font-size:17px;font-weight:300;line-height:1;margin-right:1px;}
+    .wa-av{width:31px;height:31px;border-radius:50%;color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .wa-hinfo{flex:1;}
+    .wa-hname{font-size:13px;font-weight:700;color:#fff;line-height:1.2;}
+    .wa-hstatus{font-size:9.5px;color:rgba(255,255,255,.72);}
+    .wa-hicons{display:flex;gap:14px;color:rgba(255,255,255,.85);font-size:15px;}
+    .wa-body{background:#e5ddd5;padding:8px 8px 4px;flex:1;}
+    .wa-date{text-align:center;margin-bottom:8px;}
+    .wa-date span{background:rgba(0,0,0,.14);color:#4a4a4a;font-size:9.5px;padding:2px 12px;border-radius:10px;}
+    /* received (left, white) */
+    .wa-r{background:#fff;border-radius:8px;border-top-left-radius:2px;padding:7px 10px 4px;max-width:82%;font-size:11.5px;color:#111;line-height:1.55;box-shadow:0 1px 1px rgba(0,0,0,.12);margin-bottom:5px;}
+    /* sent (right, green) */
+    .wa-s{background:#dcf8c6;border-radius:8px;border-top-right-radius:2px;padding:7px 10px 4px;max-width:82%;font-size:11.5px;color:#111;line-height:1.55;box-shadow:0 1px 1px rgba(0,0,0,.12);margin-bottom:5px;margin-left:auto;}
+    .wa-ts{font-size:9.5px;color:rgba(0,0,0,.38);text-align:right;margin-top:2px;}
+    .wa-tick{color:#53bdeb;}
+    /* input bar */
+    .wa-inp{background:#f0f0f0;display:flex;align-items:center;padding:5px 9px;gap:8px;flex-shrink:0;}
+    .wa-inp-em{font-size:19px;color:#777;}
+    .wa-inp-fld{flex:1;background:#fff;border-radius:22px;padding:6px 14px;font-size:10px;color:#bbb;}
+    .wa-inp-mic{font-size:19px;color:#777;}
+
+    /* ══════════ GOLD + DARK CHARCOAL THEME ══════════ */
+    :root{--navy:#101A3D;--navy2:#252525;--yellow:#2F6FEB;--blue:#1B4DB3;--lightbg:#0B1330;--text:#F0F0F0;--muted:#AAAAAA;--border:#22335C;}
+    body{background:#060912;color:#F0F0F0;}
+    .top-pill{background:#1a1a2e;color:#ffffff;}
+    .hero{background:linear-gradient(160deg,#000 0%,#0D0900 50%,#0D1F52 100%);}
+    .hero h1{color:#fff;}
+    .hero h1 .hl{background:linear-gradient(135deg,#2F6FEB,#5AC8FA);color:#000;padding:0 6px;}
+    .hero-sub{color:rgba(255,255,255,.75);}
+    .no-badge{background:rgba(47,111,235,.08);border-color:rgba(47,111,235,.3);color:#F0F0F0;}
+    .no-badge .ck{color:#2F6FEB;}
+    .hero-video-box{border-color:rgba(47,111,235,.4);}
+    .hero-video-header{background:linear-gradient(90deg,#0D1F52,#142F78);}
+    .hero-right-box{background:linear-gradient(160deg,#0D1F52,#142F78);}
+    .live-badge{background:#060912;border-color:#2F6FEB;color:#2F6FEB;}
+    .hbck{background:#2F6FEB;border-color:rgba(47,111,235,.3);}
+    .hbck::after,.rb-dot::after,.about-dot::after,.bdot::after,.ag-dot::after{background:#000;}
+    .sec-wrap{background:#060912;}
+    .sec-wrap.gray{background:#0B1330;}
+    .sec-title{color:#F0F0F0;}
+    .sec-title .hl{background:linear-gradient(135deg,#2F6FEB,#5AC8FA);color:#000;}
+    .sec-sub{color:#AAAAAA;}
+    .sec-divider{background:linear-gradient(90deg,#2F6FEB,#5AC8FA);}
+    .event-details{background:#0B1330;}
+    .event-box{background:#101A3D;border-color:#22335C;}
+    .event-icon{background:linear-gradient(135deg,#142F78,#0D1F52);}
+    .event-box .lbl{color:#2F6FEB;}
+    .event-box .val{color:#F0F0F0;}
+    .cta-block{background:#060912;}
+    .cta-block.gray{background:#0B1330;}
+    .enroll-btn{background:linear-gradient(135deg,#2F6FEB,#5AC8FA);color:#000;box-shadow:0 6px 32px rgba(47,111,235,.45);}
+    .enroll-btn:hover{background:linear-gradient(135deg,#5AC8FA,#2F6FEB);color:#000;}
+    .seats-badge{background:#2F6FEB;color:#000;}
+    .pb-box{background:#2A2A2A;}
+    .pb-box.done{background:#2F6FEB;box-shadow:0 0 6px rgba(47,111,235,0.5);}
+    .hurry{color:#888;}
+    .client-card{background:#101A3D;border-color:#22335C;}
+    .client-name{color:#F0F0F0;}
+    .client-role,.client-ig{color:#888;}
+    .vt-card,.vt-logo-card{background:#101A3D;border-color:#22335C;}
+    .vt-name,.vt-biz-name{color:#F0F0F0;}
+    .vt-quote,.vt-biz-quote{color:#CCC;border-top-color:#22335C;}
+    .vt-avatar{border-color:#2F6FEB;}
+    .vt-logo-wrap{background:#252525;border-color:#22335C;}
+    .vt-built{color:#888;}
+    .vt-arrow,.red-dnarrow{border-color:#2F6FEB;color:#2F6FEB;}
+    .results-img{border-color:#22335C;}
+    .results-box{background:linear-gradient(160deg,#0D1F52,#142F78);}
+    .rb-dot{background:#2F6FEB;border-color:rgba(47,111,235,.3);}
+    .compare-story{color:#CCC;}
+    .compare-table{border-color:#22335C;}
+    .compare-row{border-top-color:#22335C;}
+    .compare-cell{border-right-color:#22335C;color:#CCC;}
+    .agenda-card{background:#101A3D;border-color:#22335C;}
+    .ag-item{color:#CCC;border-bottom-color:#22335C;}
+    .agenda-day-badge{background:#2F6FEB;color:#000;}
+    .ag-dot{background:#2F6FEB;border-color:rgba(47,111,235,.25);}
+    .bonus-card{background:#101A3D;border-color:#22335C;}
+    .bonus-tag{background:#2F6FEB;color:#000;}
+    .bonus-title{color:#F0F0F0;}
+    .bonus-pt{color:#CCC;}
+    .bdot{background:#2F6FEB;border-color:rgba(47,111,235,.2);}
+    .bonus-footer{background:linear-gradient(90deg,#0D1F52,#142F78);}
+    .price-section{background:#0B1330;}
+    .handwritten,.handwritten-annot{color:#2F6FEB;}
+    .price-table{border-color:#2F6FEB;}
+    .pt-header{background:#2F6FEB;color:#000;}
+    .pt-row{border-bottom-color:#22335C;}
+    .pt-row.faded{background:#101A3D;}
+    .pt-row.active{background:#0B1330;}
+    .pt-cell{color:#F0F0F0;border-right-color:#22335C;}
+    .pt-cell.price{color:#2F6FEB;}
+    .price-today{color:#F0F0F0;}
+    .price-today .green{color:#2F6FEB;}
+    .about-section{background:#060912;}
+    .about-box{background:linear-gradient(160deg,#0D1F52,#142F78);border:1px solid rgba(47,111,235,.25);}
+    .about-dot{background:#2F6FEB;border-color:rgba(47,111,235,.2);}
+    .about-divider{background:rgba(47,111,235,.5);}
+    .faq-section{background:#0B1330;}
+    details{background:#101A3D;border-color:#22335C;}
+    summary{color:#F0F0F0;}
+    summary::after{color:#2F6FEB;}
+    .faq-body{color:#AAAAAA;}
+    .sticky{background:#060912;border-top-color:#22335C;}
+    .sticky-price{color:#2F6FEB;}
+    .sticky-close,.sticky-center{color:#888;}
+    .sticky-btn{background:linear-gradient(135deg,#2F6FEB,#5AC8FA);color:#000;box-shadow:0 4px 14px rgba(47,111,235,.35);}
+    .sticky-btn:hover{background:linear-gradient(135deg,#5AC8FA,#2F6FEB);}
+    footer{background:#04060D;border-top-color:#222;color:#555;}
+    footer a{color:#2F6FEB;}
+    .pipe-label-title{color:#F0F0F0;}
+    .pipe-label-desc{color:#888;}
+    .pipe-num-big{color:#2F6FEB;}
+    .pipe-connector{background:linear-gradient(90deg,#2F6FEB,#1B4DB3);}
+    .wa-section{background:#0B1330;}
+    .wa-section .sec-title{color:#F0F0F0;}
+    .wa-green-sub{color:#2F6FEB;}
+    .phones-proof{background:#0B1330;}
+    .sc-card{background:#101A3D;border-color:#22335C;}
+    .sc-app-name{color:#2F6FEB;}
+    .sc-app-desc{color:#AAA;}
+    .sc-tag{background:#252525;color:#AAA;}
+    .sc-tag.built{background:#0D1F52;color:#2F6FEB;}
+    .showcase-dots .dot.active{background:#2F6FEB;}
+    /* ════════════════════════════════════════════════ */
+
+    /* ── RESPONSIVE ── */
+    /* Mobile video top — hidden on desktop */
+    .mobile-video-top{display:none;}
+    @media(max-width:768px){
+      /* Compact hero on mobile — everything in first screen */
+      .hero{padding:16px 16px 24px;}
+      .hero h1{font-size:22px;line-height:1.2;margin-bottom:6px;}
+      .hero-sub{font-size:13px;margin-bottom:10px;}
+      .no-badges{gap:6px;margin-bottom:12px;}
+      .no-badge{padding:6px 12px;font-size:12px;}
+      .mobile-video-top{display:block;width:100%;margin-bottom:12px;border-radius:12px;overflow:hidden;border:2px solid rgba(47,111,235,.4);}
+      .hero-video-box{display:none;}
+      .hero-2col{grid-template-columns:1fr;gap:16px;}
+      .clients-grid{grid-template-columns:1fr 1fr;}
+      .results-2col{grid-template-columns:1fr;}
+      .compare-wrap{grid-template-columns:1fr;}
+      .agenda-grid{grid-template-columns:1fr;}
+      .bonuses-grid{grid-template-columns:1fr;}
+      .about-box{grid-template-columns:1fr;text-align:center;padding:32px 20px;}
+      .about-photo-circle{margin:0 auto;}
+      .about-divider{margin:0 auto 20px;}
+      .pipe-labels{flex-wrap:wrap;}
+      .pipe-label-item{min-width:80px;}
+      .vt-grid{grid-template-columns:1fr;}
+      .sticky{padding:8px 12px;}
+      .pt-row{grid-template-columns:1fr 1fr 1fr;}
+      .phone-device.tilted{transform:none;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── PAGE LOADER ── -->
+<!-- page loader removed - was causing blank screen for 98% of visitors -->
+
+<style>
+  .loader-bar .sq.filled {
+    background: #2F6FEB;
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(47,111,235,0.6);
+  }
+  .loader-sub {
+    color: #555;
+    font-size: 13px;
+    margin-top: 4px;
+  }
+</style>
+
+<!-- TOP PILL -->
+<div class="top-pill-wrap">
+  <div class="top-pill">★ 110% Money Back Guarantee — Create Your Film in 30 Min or Get Full Refund + Rs.25 Extra!</div>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <!-- Mobile-only video at top -->
+  <div class="mobile-video-top">
+    <div id="mobile-video-thumb" style="position:relative;width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#101A3D,#1B4DB3);border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+      <div style="width:68px;height:48px;background:#2F6FEB;border-radius:12px;display:flex;align-items:center;justify-content:center;">
+        <div style="width:0;height:0;border-top:14px solid transparent;border-bottom:14px solid transparent;border-left:22px solid white;margin-left:4px;"></div>
+      </div>
+      <p style="color:rgba(255,255,255,.6);font-size:11px;font-weight:700;margin:0;">Add your workshop preview video here</p>
+    </div>
+  </div>
+  <h1>
+    Create Your Dream Film in<br/>
+    <span class="hl">30 Minutes</span> Using The Power<br/>
+    Of <span class="ul">A.I.</span>
+  </h1>
+  <p class="hero-sub">Even ONE AI brand film can sell for ₹25,000–₹95,000 per project... Zero Editing-Skills Method & Complete Creative Freedom.</p>
+  <div class="no-badges">
+    <div class="no-badge"><span class="ck">✓</span> NO Camera Crew Needed</div>
+    <div class="no-badge"><span class="ck">✓</span> NO Editing Skills</div>
+    <div class="no-badge"><span class="ck">✓</span> NO Film School Degree</div>
+  </div>
+  <div class="hero-2col">
+    <div class="hero-video-box">
+      <div class="hero-video-header">▶ Watch This Before You Enroll</div>
+      <!-- Desktop video -->
+      <div id="desktop-video-thumb" style="position:relative;width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#101A3D,#1B4DB3);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;">
+        <div style="width:68px;height:48px;background:#2F6FEB;border-radius:12px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:0;height:0;border-top:14px solid transparent;border-bottom:14px solid transparent;border-left:22px solid white;margin-left:4px;"></div>
+        </div>
+        <p style="color:rgba(255,255,255,.6);font-size:13px;font-weight:700;margin:0;">Add your workshop preview video here</p>
+      </div>
+    </div>
+    <div class="hero-right-box">
+      <div class="live-badge">LIVE</div>
+      <div class="hero-bullets">
+        <div class="hero-bullet">
+          <div class="hbck"></div>
+          <p>How To Create <strong>A Cinematic Short Film in 30 Minutes</strong> Which Would Otherwise Cost ₹2–5 Lakhs To Shoot!</p>
+        </div>
+        <div class="hero-bullet">
+          <div class="hbck"></div>
+          <p>How To Add <strong>Hollywood-Style VFX & AI Voiceovers</strong> Without Any Editor.</p>
+        </div>
+        <div class="hero-bullet">
+          <div class="hbck"></div>
+          <p>How To Land Your First Paying Client & <strong>Sell AI Brand Films For ₹25,000–₹95,000</strong> Per Project — Even As A Beginner.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STORE TRUST BAR ── -->
+<div class="store-trust-bar">
+  <p class="store-trust-label">🎬 Your Film Will Be Ready To Publish On</p>
+  <div class="store-badges">
+    <!-- YouTube Badge -->
+    <a href="#book" class="store-badge-link">
+      <svg width="150" height="46" viewBox="0 0 150 46" xmlns="http://www.w3.org/2000/svg">
+        <rect width="150" height="46" rx="8" fill="#000"/>
+        <rect x="0.5" y="0.5" width="149" height="45" rx="7.5" stroke="#a6a6a6" stroke-width="1" fill="none"/>
+        <rect x="12" y="13" width="22" height="20" rx="5" fill="#FF0000"/>
+        <path d="M20 18 L20 28 L28.5 23 Z" fill="#fff"/>
+        <text x="42" y="18" font-family="Arial,sans-serif" font-size="9" fill="#fff" opacity="0.8">PUBLISH ON</text>
+        <text x="42" y="35" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#fff">YouTube</text>
+      </svg>
+    </a>
+    <!-- Instagram Badge -->
+    <a href="#book" class="store-badge-link">
+      <svg width="160" height="46" viewBox="0 0 160 46" xmlns="http://www.w3.org/2000/svg">
+        <rect width="160" height="46" rx="8" fill="#000"/>
+        <rect x="0.5" y="0.5" width="159" height="45" rx="7.5" stroke="#a6a6a6" stroke-width="1" fill="none"/>
+        <defs><linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#feda75"/><stop offset="35%" stop-color="#d62976"/><stop offset="70%" stop-color="#962fbf"/><stop offset="100%" stop-color="#4f5bd5"/></linearGradient></defs>
+        <rect x="12" y="12" width="22" height="22" rx="6" fill="url(#igGrad)"/>
+        <circle cx="23" cy="23" r="6" fill="none" stroke="#fff" stroke-width="1.6"/>
+        <circle cx="30" cy="16" r="1.4" fill="#fff"/>
+        <text x="42" y="18" font-family="Arial,sans-serif" font-size="9" fill="#fff" opacity="0.8">SHARE ON</text>
+        <text x="42" y="35" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#fff">Instagram</text>
+      </svg>
+    </a>
+    <!-- Facebook Badge -->
+    <a href="#book" class="store-badge-link">
+      <svg width="155" height="46" viewBox="0 0 155 46" xmlns="http://www.w3.org/2000/svg">
+        <rect width="155" height="46" rx="8" fill="#000"/>
+        <rect x="0.5" y="0.5" width="154" height="45" rx="7.5" stroke="#a6a6a6" stroke-width="1" fill="none"/>
+        <circle cx="23" cy="23" r="11" fill="#1877F2"/>
+        <text x="23" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="bold" fill="#fff">f</text>
+        <text x="42" y="18" font-family="Arial,sans-serif" font-size="9" fill="#fff" opacity="0.8">SHARE ON</text>
+        <text x="42" y="35" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#fff">Facebook</text>
+      </svg>
+    </a>
+    <!-- Netflix Badge -->
+    <a href="#book" class="store-badge-link">
+      <svg width="150" height="46" viewBox="0 0 150 46" xmlns="http://www.w3.org/2000/svg">
+        <rect width="150" height="46" rx="8" fill="#000"/>
+        <rect x="0.5" y="0.5" width="149" height="45" rx="7.5" stroke="#a6a6a6" stroke-width="1" fill="none"/>
+        <rect x="12" y="12" width="22" height="22" rx="4" fill="#141414"/>
+        <text x="23" y="29" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="900" fill="#E50914">N</text>
+        <text x="42" y="18" font-family="Arial,sans-serif" font-size="9" fill="#fff" opacity="0.8">STREAM ON</text>
+        <text x="42" y="35" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#fff">Netflix</text>
+      </svg>
+    </a>
+    <!-- Amazon Prime Video Badge -->
+    <a href="#book" class="store-badge-link">
+      <svg width="185" height="46" viewBox="0 0 185 46" xmlns="http://www.w3.org/2000/svg">
+        <rect width="185" height="46" rx="8" fill="#000"/>
+        <rect x="0.5" y="0.5" width="184" height="45" rx="7.5" stroke="#a6a6a6" stroke-width="1" fill="none"/>
+        <rect x="12" y="12" width="22" height="22" rx="6" fill="#00A8E1"/>
+        <path d="M19 18 L19 28 L28 23 Z" fill="#fff"/>
+        <text x="42" y="18" font-family="Arial,sans-serif" font-size="9" fill="#fff" opacity="0.8">WATCH ON</text>
+        <text x="42" y="35" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#fff">Prime Video</text>
+      </svg>
+    </a>
+  </div>
+  <p class="store-trust-sub">Create a real film in 30 mins — ready for YouTube, Instagram, Facebook, Netflix &amp; Amazon Prime</p>
+</div>
+
+<!-- EVENT DETAILS -->
+<div class="event-details">
+  <div class="event-grid" style="max-width:700px;margin:0 auto;">
+    <div class="event-box">
+      <div class="event-icon">📅</div>
+      <div><div class="lbl">DATE</div><div class="val">20th August 2026 (Thu)</div></div>
+    </div>
+    <div class="event-box">
+      <div class="event-icon">🕐</div>
+      <div><div class="lbl">TIME</div><div class="val">7:00 PM IST</div></div>
+    </div>
+    <div class="event-box">
+      <div class="event-icon">📍</div>
+      <div><div class="lbl">WHERE</div><div class="val">On Zoom (Online)</div></div>
+    </div>
+    <div class="event-box">
+      <div class="event-icon">🌐</div>
+      <div><div class="lbl">LANGUAGE</div><div class="val">Hindi + English</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- COUNTDOWN TIMER -->
+<div style="background:linear-gradient(135deg,#0D1F52,#142F78);padding:28px 20px;text-align:center;border-top:1px solid rgba(47,111,235,.2);border-bottom:1px solid rgba(47,111,235,.2);">
+  <p style="color:#2F6FEB;font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin:0 0 14px;">⚡ Workshop Starts In</p>
+  <div id="countdown" style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
+    <div style="text-align:center;">
+      <div id="cd-days" style="background:#2F6FEB;color:#000;font-size:36px;font-weight:900;width:72px;height:72px;border-radius:12px;display:flex;align-items:center;justify-content:center;line-height:1;">00</div>
+      <div style="color:#AAA;font-size:11px;font-weight:700;margin-top:6px;letter-spacing:1px;">DAYS</div>
+    </div>
+    <div style="color:#2F6FEB;font-size:36px;font-weight:900;padding-top:14px;">:</div>
+    <div style="text-align:center;">
+      <div id="cd-hours" style="background:#2F6FEB;color:#000;font-size:36px;font-weight:900;width:72px;height:72px;border-radius:12px;display:flex;align-items:center;justify-content:center;line-height:1;">00</div>
+      <div style="color:#AAA;font-size:11px;font-weight:700;margin-top:6px;letter-spacing:1px;">HOURS</div>
+    </div>
+    <div style="color:#2F6FEB;font-size:36px;font-weight:900;padding-top:14px;">:</div>
+    <div style="text-align:center;">
+      <div id="cd-mins" style="background:#2F6FEB;color:#000;font-size:36px;font-weight:900;width:72px;height:72px;border-radius:12px;display:flex;align-items:center;justify-content:center;line-height:1;">00</div>
+      <div style="color:#AAA;font-size:11px;font-weight:700;margin-top:6px;letter-spacing:1px;">MINS</div>
+    </div>
+    <div style="color:#2F6FEB;font-size:36px;font-weight:900;padding-top:14px;">:</div>
+    <div style="text-align:center;">
+      <div id="cd-secs" style="background:#101A3D;border:2px solid #2F6FEB;color:#2F6FEB;font-size:36px;font-weight:900;width:72px;height:72px;border-radius:12px;display:flex;align-items:center;justify-content:center;line-height:1;">00</div>
+      <div style="color:#AAA;font-size:11px;font-weight:700;margin-top:6px;letter-spacing:1px;">SECS</div>
+    </div>
+  </div>
+  <p style="color:#fff;font-size:14px;font-weight:700;margin:16px 0 0;">20th August 2026 (Thursday) &nbsp;·&nbsp; 7:00 PM IST &nbsp;·&nbsp; Live on Zoom</p>
+</div>
+<script>
+(function(){
+  const target = new Date('2026-08-20T19:00:00+05:30').getTime();
+  function tick(){
+    const now = Date.now();
+    const diff = target - now;
+    if(diff <= 0){
+      document.getElementById('cd-days').textContent='00';
+      document.getElementById('cd-hours').textContent='00';
+      document.getElementById('cd-mins').textContent='00';
+      document.getElementById('cd-secs').textContent='00';
+      return;
+    }
+    const d = Math.floor(diff/86400000);
+    const h = Math.floor((diff%86400000)/3600000);
+    const m = Math.floor((diff%3600000)/60000);
+    const s = Math.floor((diff%60000)/1000);
+    document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick,1000);
+})();
+</script>
+
+<!-- CTA BLOCK 1 -->
+<div class="cta-block">
+  <a href="#book" class="enroll-btn">
+    <span class="seats-badge">49 Seats Left</span>
+    🎬 Create My Film Now <span class="old">₹999</span> ₹99 →
+  </a>
+  <div class="progress-bar">
+    <div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div>
+    <div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div>
+    <div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div>
+    <div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div>
+    <div class="pb-box"></div><div class="pb-box"></div>
+  </div>
+  <div class="hurry">⚠️ Hurry! Seats For This Workshop Are Low</div>
+</div>
+
+
+<!-- IN JUST 30 MINUTES -->
+<section class="sec-wrap">
+  <div class="sec-inner">
+    <h2 class="sec-title">In Just 30 Minutes... You Can Start Getting <span class="ul">Ready<br/>To Release</span> Your Dream Film!!</h2>
+    <p class="sec-sub">This Is The Ultimate Method That TOP Content Creators Use (They Won't Tell You...)</p>
+    <div class="sec-divider"></div>
+    <div style="margin-top:36px;text-align:center;">
+      <!-- Phone mockup with screen recording inside -->
+      <div style="display:inline-block;position:relative;">
+        <div style="
+          width:260px;
+          background:#1c1c1e;
+          border-radius:38px;
+          padding:12px;
+          box-shadow:0 24px 60px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08);
+          display:inline-block;
+        ">
+          <!-- notch -->
+          <div style="position:absolute;top:22px;left:50%;transform:translateX(-50%);width:80px;height:20px;background:#1c1c1e;border-radius:0 0 14px 14px;z-index:10;"></div>
+          <!-- screen -->
+          <div style="border-radius:28px;overflow:hidden;background:#000;aspect-ratio:9/19.5;position:relative;">
+            <video preload="none" width="100%" height="100%" autoplay muted loop playsinline style="display:block;object-fit:cover;width:100%;height:100%;">
+              <source src="app-demo.mp4" type="video/mp4"/>
+            </video>
+          </div>
+          <!-- home bar -->
+          <div style="margin-top:8px;width:80px;height:4px;background:rgba(255,255,255,.3);border-radius:4px;margin-left:auto;margin-right:auto;"></div>
+        </div>
+      </div>
+      <p style="margin-top:20px;font-size:15px;color:#2F6FEB;font-style:italic;font-weight:700;">And when you follow this method... your film could be live same day! ⚡</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BLOCK 2 -->
+<div class="cta-block gray">
+  <a href="#book" class="enroll-btn">
+    <span class="seats-badge">49 Seats Left</span>
+    🎬 Create My Film Now <span class="old">₹999</span> ₹99 →
+  </a>
+  <div class="progress-bar">
+    <div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div>
+    <div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div>
+    <div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div>
+    <div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div>
+    <div class="pb-box"></div><div class="pb-box"></div>
+  </div>
+  <div class="hurry">⚠️ Hurry! Seats For This Workshop Are Low</div>
+</div>
+
+<!-- AI APP BUILDING SYSTEM -->
+<section class="sec-wrap">
+  <div class="sec-inner" style="text-align:center;">
+    <h2 class="sec-title">The Only System<br/><span class="ul">You'll Ever Need</span> To Create Any Film Rapidly!</h2>
+    <div class="sec-divider"></div>
+    <p style="text-align:center;font-size:18px;font-weight:800;color:#F0F0F0;margin-top:24px;">AI Moviemaking System</p>
+    <!-- SVG PIPE SYSTEM -->
+    <div class="pipe-svg-wrap">
+      <svg viewBox="0 0 1100 340" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="pg1" gradientUnits="userSpaceOnUse" x1="110" y1="285" x2="330" y2="75">
+            <stop offset="0%" stop-color="#e6c800"/><stop offset="100%" stop-color="#f58000"/>
+          </linearGradient>
+          <linearGradient id="pg2" gradientUnits="userSpaceOnUse" x1="330" y1="75" x2="550" y2="225">
+            <stop offset="0%" stop-color="#f58000"/><stop offset="100%" stop-color="#e03838"/>
+          </linearGradient>
+          <linearGradient id="pg3" gradientUnits="userSpaceOnUse" x1="550" y1="225" x2="770" y2="75">
+            <stop offset="0%" stop-color="#e03838"/><stop offset="100%" stop-color="#d038b0"/>
+          </linearGradient>
+          <linearGradient id="pg4" gradientUnits="userSpaceOnUse" x1="770" y1="75" x2="990" y2="225">
+            <stop offset="0%" stop-color="#d038b0"/><stop offset="100%" stop-color="#7838c0"/>
+          </linearGradient>
+          <!-- Shadow gradients (darker versions) -->
+          <linearGradient id="ps1" gradientUnits="userSpaceOnUse" x1="110" y1="285" x2="330" y2="75">
+            <stop offset="0%" stop-color="#a08800"/><stop offset="100%" stop-color="#b05500"/>
+          </linearGradient>
+          <linearGradient id="ps2" gradientUnits="userSpaceOnUse" x1="330" y1="75" x2="550" y2="225">
+            <stop offset="0%" stop-color="#b05500"/><stop offset="100%" stop-color="#a01818"/>
+          </linearGradient>
+          <linearGradient id="ps3" gradientUnits="userSpaceOnUse" x1="550" y1="225" x2="770" y2="75">
+            <stop offset="0%" stop-color="#a01818"/><stop offset="100%" stop-color="#980880"/>
+          </linearGradient>
+          <linearGradient id="ps4" gradientUnits="userSpaceOnUse" x1="770" y1="75" x2="990" y2="225">
+            <stop offset="0%" stop-color="#980880"/><stop offset="100%" stop-color="#480890"/>
+          </linearGradient>
+        </defs>
+
+        <!-- ── PIPE PATHS (4 layers each: shadow → main → rings → highlight) ── -->
+
+        <!-- PIPE 01→02 (yellow→orange) -->
+        <path d="M 110,285 L 220,285 L 220,75 L 330,75" stroke="url(#ps1)" stroke-width="32" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 110,285 L 220,285 L 220,75 L 330,75" stroke="url(#pg1)" stroke-width="24" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 110,285 L 220,285 L 220,75 L 330,75" stroke="rgba(0,0,0,.18)" stroke-width="24" fill="none" stroke-dasharray="4 30" stroke-linecap="butt" stroke-linejoin="round"/>
+        <path d="M 110,285 L 220,285 L 220,75 L 330,75" stroke="rgba(255,255,255,.3)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- PIPE 02→03 (orange→red) -->
+        <path d="M 330,75 L 440,75 L 440,225 L 550,225" stroke="url(#ps2)" stroke-width="32" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 330,75 L 440,75 L 440,225 L 550,225" stroke="url(#pg2)" stroke-width="24" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 330,75 L 440,75 L 440,225 L 550,225" stroke="rgba(0,0,0,.18)" stroke-width="24" fill="none" stroke-dasharray="4 30" stroke-linecap="butt" stroke-linejoin="round"/>
+        <path d="M 330,75 L 440,75 L 440,225 L 550,225" stroke="rgba(255,255,255,.3)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- PIPE 03→04 (red→pink) -->
+        <path d="M 550,225 L 660,225 L 660,75 L 770,75" stroke="url(#ps3)" stroke-width="32" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 550,225 L 660,225 L 660,75 L 770,75" stroke="url(#pg3)" stroke-width="24" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 550,225 L 660,225 L 660,75 L 770,75" stroke="rgba(0,0,0,.18)" stroke-width="24" fill="none" stroke-dasharray="4 30" stroke-linecap="butt" stroke-linejoin="round"/>
+        <path d="M 550,225 L 660,225 L 660,75 L 770,75" stroke="rgba(255,255,255,.3)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- PIPE 04→05 (pink→purple) -->
+        <path d="M 770,75 L 880,75 L 880,225 L 990,225" stroke="url(#ps4)" stroke-width="32" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 770,75 L 880,75 L 880,225 L 990,225" stroke="url(#pg4)" stroke-width="24" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 770,75 L 880,75 L 880,225 L 990,225" stroke="rgba(0,0,0,.18)" stroke-width="24" fill="none" stroke-dasharray="4 30" stroke-linecap="butt" stroke-linejoin="round"/>
+        <path d="M 770,75 L 880,75 L 880,225 L 990,225" stroke="rgba(255,255,255,.3)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- ── CIRCLE NODES (shadow + fill + inner ring) ── -->
+
+        <!-- 01 yellow -->
+        <circle cx="110" cy="285" r="46" fill="#a08800"/>
+        <circle cx="110" cy="285" r="40" fill="#e6c800"/>
+        <circle cx="110" cy="285" r="28" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="3"/>
+        <text x="110" y="293" text-anchor="middle" font-size="26" fill="white">💬</text>
+
+        <!-- 02 orange -->
+        <circle cx="330" cy="75" r="46" fill="#b05500"/>
+        <circle cx="330" cy="75" r="40" fill="#f58000"/>
+        <circle cx="330" cy="75" r="28" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="3"/>
+        <text x="330" y="83" text-anchor="middle" font-size="26" fill="white">🤖</text>
+
+        <!-- 03 red -->
+        <circle cx="550" cy="225" r="46" fill="#a01818"/>
+        <circle cx="550" cy="225" r="40" fill="#e03838"/>
+        <circle cx="550" cy="225" r="28" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="3"/>
+        <text x="550" y="233" text-anchor="middle" font-size="26" fill="white">🎨</text>
+
+        <!-- 04 pink/magenta -->
+        <circle cx="770" cy="75" r="46" fill="#980880"/>
+        <circle cx="770" cy="75" r="40" fill="#d038b0"/>
+        <circle cx="770" cy="75" r="28" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="3"/>
+        <text x="770" y="83" text-anchor="middle" font-size="26" fill="white">⚡</text>
+
+        <!-- 05 purple -->
+        <circle cx="990" cy="225" r="46" fill="#480890"/>
+        <circle cx="990" cy="225" r="40" fill="#7838c0"/>
+        <circle cx="990" cy="225" r="28" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="3"/>
+        <text x="990" y="233" text-anchor="middle" font-size="26" fill="white">🚀</text>
+      </svg>
+
+      <!-- Labels below -->
+      <div class="pipe-labels">
+        <div class="pipe-label-item">
+          <div class="pipe-num-big" style="color:#e6c800;">01</div>
+          <div class="pipe-label-title">Describe Scene</div>
+          <div class="pipe-label-desc">Tell AI your story or scene idea in Hindi or English</div>
+        </div>
+        <div class="pipe-label-item">
+          <div class="pipe-num-big" style="color:#f58000;">02</div>
+          <div class="pipe-label-title">AI Generates It</div>
+          <div class="pipe-label-desc">AI creates the footage, voiceover & music automatically</div>
+        </div>
+        <div class="pipe-label-item">
+          <div class="pipe-num-big" style="color:#e03838;">03</div>
+          <div class="pipe-label-title">Customize</div>
+          <div class="pipe-label-desc">Add your characters, style and branding</div>
+        </div>
+        <div class="pipe-label-item">
+          <div class="pipe-num-big" style="color:#d038b0;">04</div>
+          <div class="pipe-label-title">Add Effects</div>
+          <div class="pipe-label-desc">VFX, transitions and background score, just by typing</div>
+        </div>
+        <div class="pipe-label-item">
+          <div class="pipe-num-big" style="color:#7838c0;">05</div>
+          <div class="pipe-label-title">Publish & Sell!</div>
+          <div class="pipe-label-desc">Share on YouTube/Instagram — or deliver to a paying client, same day</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILM SHOWCASE SECTION -->
+<section class="sec-wrap gray" id="showcase">
+  <div class="sec-inner" style="text-align:center;">
+    <h2 class="sec-title">Films <span class="hl">We've Already Made</span> Using This System</h2>
+    <p class="sec-sub">Real AI-generated films — created in under 30 minutes each</p>
+    <div class="sec-divider"></div>
+
+    <div class="showcase-wrap">
+    <div class="showcase-scroll" id="showcaseScroll">
+
+      <!-- FILM 1: StudioAI -->
+      <div class="sc-card">
+        <div class="sc-phone-wrap" style="background:linear-gradient(135deg,#fff3e0,#ffe0b2);">
+          <div class="sc-phone-device">
+            <div class="sc-phone-screen" style="position:relative;background:#000;">
+              <iframe src="https://www.youtube.com/embed/viYwkv_PjSc?rel=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=viYwkv_PjSc&amp;controls=0&amp;playsinline=1&amp;modestbranding=1&amp;iv_load_policy=3&amp;disablekb=1&amp;fs=0" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen style="width:170%;height:170%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></iframe>
+              <div style="position:absolute;top:0;left:0;right:0;height:28%;background:#000;z-index:2;"></div>
+              <div style="position:absolute;bottom:0;left:0;right:0;height:28%;background:#000;z-index:2;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="sc-card-body">
+          <div class="sc-app-name">🎬 StudioAI</div>
+          <div class="sc-app-desc">Project pipeline, scene renders & export tracking</div>
+          <div class="sc-tags"><span class="sc-tag">Moviemaking</span><span class="sc-tag built">⚡ 22 min</span></div>
+        </div>
+      </div>
+
+      <!-- FILM 2: FilmPipeline -->
+      <div class="sc-card">
+        <div class="sc-phone-wrap" style="background:linear-gradient(135deg,#e8eaf6,#c5cae9);">
+          <div class="sc-phone-device">
+            <div class="sc-phone-screen" style="position:relative;background:#000;">
+              <iframe src="https://www.youtube.com/embed/fxc4jSeBUyU?rel=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=fxc4jSeBUyU&amp;controls=0&amp;playsinline=1&amp;modestbranding=1&amp;iv_load_policy=3&amp;disablekb=1&amp;fs=0" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen style="width:170%;height:170%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></iframe>
+              <div style="position:absolute;top:0;left:0;right:0;height:28%;background:#000;z-index:2;"></div>
+              <div style="position:absolute;bottom:0;left:0;right:0;height:28%;background:#000;z-index:2;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="sc-card-body">
+          <div class="sc-app-name">📊 FilmPipeline</div>
+          <div class="sc-app-desc">Client film projects, status tracking & invoicing</div>
+          <div class="sc-tags"><span class="sc-tag">Production House</span><span class="sc-tag built">⚡ 28 min</span></div>
+        </div>
+      </div>
+
+      <!-- FILM 3: ClipMarket -->
+      <div class="sc-card">
+        <div class="sc-phone-wrap" style="background:linear-gradient(135deg,#fce4ec,#f8bbd9);">
+          <div class="sc-phone-device">
+            <div class="sc-phone-screen" style="position:relative;background:#000;">
+              <iframe src="https://www.youtube.com/embed/GW5yg1_bNQk?rel=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=GW5yg1_bNQk&amp;controls=0&amp;playsinline=1&amp;modestbranding=1&amp;iv_load_policy=3&amp;disablekb=1&amp;fs=0" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen style="width:170%;height:170%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></iframe>
+              <div style="position:absolute;top:0;left:0;right:0;height:28%;background:#000;z-index:2;"></div>
+              <div style="position:absolute;bottom:0;left:0;right:0;height:28%;background:#000;z-index:2;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="sc-card-body">
+          <div class="sc-app-name">🎞️ ClipMarket</div>
+          <div class="sc-app-desc">Buy & sell AI film templates, ready in one click</div>
+          <div class="sc-tags"><span class="sc-tag">Marketplace</span><span class="sc-tag built">⚡ 25 min</span></div>
+        </div>
+      </div>
+
+      <!-- FILM 4: ShootSchedule -->
+      <div class="sc-card">
+        <div class="sc-phone-wrap" style="background:linear-gradient(135deg,#f3e5f5,#e1bee7);">
+          <div class="sc-phone-device">
+            <div class="sc-phone-screen" style="position:relative;background:#000;">
+              <iframe src="https://www.youtube.com/embed/61NLSpJ5z_0?rel=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=61NLSpJ5z_0&amp;controls=0&amp;playsinline=1&amp;modestbranding=1&amp;iv_load_policy=3&amp;disablekb=1&amp;fs=0" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen style="width:170%;height:170%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></iframe>
+              <div style="position:absolute;top:0;left:0;right:0;height:28%;background:#000;z-index:2;"></div>
+              <div style="position:absolute;bottom:0;left:0;right:0;height:28%;background:#000;z-index:2;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="sc-card-body">
+          <div class="sc-app-name">🎥 ShootSchedule</div>
+          <div class="sc-app-desc">Client shoot bookings, editing schedule & billing</div>
+          <div class="sc-tags"><span class="sc-tag">Videography</span><span class="sc-tag built">⚡ 18 min</span></div>
+        </div>
+      </div>
+
+      <!-- FILM 5: FilmMarket -->
+      <div class="sc-card">
+        <div class="sc-phone-wrap" style="background:linear-gradient(135deg,#e0f7fa,#b2ebf2);">
+          <div class="sc-phone-device">
+            <div class="sc-phone-screen">
+              <div class="sc-sb" style="background:#004d40;"><span class="sc-sb-t">9:41</span><span class="sc-sb-i">▌▌ WiFi 🔋</span></div>
+              <div style="background:#004d40;padding:4px 5px 5px;display:flex;align-items:center;gap:3px;flex-shrink:0;">
+                <div style="flex:1;background:rgba(255,255,255,.18);border-radius:5px;padding:3px 6px;font-size:5.5px;color:rgba(255,255,255,.7);">🔍 Search films...</div>
+                <span style="font-size:12px;color:#fff;">🛒</span>
+              </div>
+              <div style="display:flex;gap:3px;padding:3px 5px;overflow:hidden;background:#fff;border-bottom:1px solid #f0f0f0;flex-shrink:0;">
+                <span style="font-size:5.5px;font-weight:700;color:#fff;background:#004d40;padding:2px 6px;border-radius:10px;white-space:nowrap;">All</span>
+                <span style="font-size:5.5px;color:#888;padding:2px 5px;border:1px solid #eee;border-radius:10px;white-space:nowrap;">Weddings</span>
+                <span style="font-size:5.5px;color:#888;padding:2px 5px;border:1px solid #eee;border-radius:10px;white-space:nowrap;">Corporate</span>
+                <span style="font-size:5.5px;color:#888;padding:2px 5px;border:1px solid #eee;border-radius:10px;white-space:nowrap;">Reels</span>
+              </div>
+              <div class="sc-content">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:4px 5px;">
+                  <div style="background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.1);">
+                    <div style="background:#e3f2fd;padding:7px;text-align:center;font-size:18px;line-height:1;">🎞️</div>
+                    <div style="padding:3px 4px;"><div style="font-size:6px;font-weight:700;color:#222;">Wedding Highlight Pack</div><div style="font-size:6.5px;font-weight:800;color:#004d40;">₹499</div><div style="font-size:5px;color:#f57c00;">★★★★★ 4.8</div></div>
+                  </div>
+                  <div style="background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.1);">
+                    <div style="background:#fce4ec;padding:7px;text-align:center;font-size:18px;line-height:1;">📽️</div>
+                    <div style="padding:3px 4px;"><div style="font-size:6px;font-weight:700;color:#222;">Cinematic LUT Pack</div><div style="font-size:6.5px;font-weight:800;color:#004d40;">₹1,299</div><div style="font-size:5px;color:#f57c00;">★★★★☆ 4.5</div></div>
+                  </div>
+                  <div style="background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.1);">
+                    <div style="background:#fff8e1;padding:7px;text-align:center;font-size:18px;line-height:1;">🎙️</div>
+                    <div style="padding:3px 4px;"><div style="font-size:6px;font-weight:700;color:#222;">AI Voiceover Pack</div><div style="font-size:6.5px;font-weight:800;color:#004d40;">₹2,499</div><div style="font-size:5px;color:#f57c00;">★★★★★ 4.9</div></div>
+                  </div>
+                  <div style="background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.1);">
+                    <div style="background:#f3e5f5;padding:7px;text-align:center;font-size:18px;line-height:1;">🎵</div>
+                    <div style="padding:3px 4px;"><div style="font-size:6px;font-weight:700;color:#222;">Royalty-Free Score Pack</div><div style="font-size:6.5px;font-weight:800;color:#004d40;">₹899</div><div style="font-size:5px;color:#f57c00;">★★★★☆ 4.6</div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="sc-bnav">
+                <div class="sc-bnav-i"><span class="sc-bnav-em">🏠</span><span class="sc-bnav-lb" style="color:#004d40;">Home</span></div>
+                <div class="sc-bnav-i"><span class="sc-bnav-em">🔍</span><span class="sc-bnav-lb" style="color:#bbb;">Search</span></div>
+                <div class="sc-bnav-i"><span class="sc-bnav-em">🛒</span><span class="sc-bnav-lb" style="color:#bbb;">Cart</span></div>
+                <div class="sc-bnav-i"><span class="sc-bnav-em">👤</span><span class="sc-bnav-lb" style="color:#bbb;">Profile</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sc-card-body">
+          <div class="sc-app-name">🎬 FilmMarket</div>
+          <div class="sc-app-desc">Sell your AI film templates, packs & stock footage</div>
+          <div class="sc-tags"><span class="sc-tag">Marketplace</span><span class="sc-tag built">⚡ 30 min</span></div>
+        </div>
+      </div>
+
+    </div><!-- end showcase-scroll -->
+    <div class="showcase-dots" id="showcaseDots"></div>
+    </div><!-- end showcase-wrap -->
+    <p class="scroll-hint">← Scroll to see more films →</p>
+  </div>
+</section>
+
+<!-- VIDEO TESTIMONIALS -->
+<section class="sec-wrap">
+  <div class="sec-inner" style="text-align:center;">
+    <h2 class="sec-title">Hear It From <span class="hl">Real Students</span></h2>
+    <p class="sec-sub">Watch what they have to say</p>
+    <div class="sec-divider"></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:32px;margin-top:40px;max-width:960px;margin-left:auto;margin-right:auto;">
+
+      <div id="vt-yt-1" style="position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;cursor:pointer;" onclick="document.getElementById('vt-yt-1').innerHTML='&lt;iframe src=\'https://www.youtube.com/embed/m_Itkh-XG18?rel=0&amp;autoplay=1&amp;playsinline=1\' frameborder=\'0\' allow=\'autoplay;encrypted-media\' allowfullscreen style=\'width:100%;height:100%;position:absolute;top:0;left:0;\'&gt;&lt;/iframe&gt;'">
+        <img src="https://i.ytimg.com/vi/m_Itkh-XG18/hqdefault.jpg" alt="Student testimonial" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:78px;height:56px;background:#2F6FEB;border-radius:14px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:0;height:0;border-top:15px solid transparent;border-bottom:15px solid transparent;border-left:24px solid white;margin-left:4px;"></div>
+        </div>
+      </div>
+
+      <div id="vt-yt-2" style="position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;cursor:pointer;" onclick="document.getElementById('vt-yt-2').innerHTML='&lt;iframe src=\'https://www.youtube.com/embed/fon89S2VkBY?rel=0&amp;autoplay=1&amp;playsinline=1\' frameborder=\'0\' allow=\'autoplay;encrypted-media\' allowfullscreen style=\'width:100%;height:100%;position:absolute;top:0;left:0;\'&gt;&lt;/iframe&gt;'">
+        <img src="https://i.ytimg.com/vi/fon89S2VkBY/hqdefault.jpg" alt="Student testimonial" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:78px;height:56px;background:#2F6FEB;border-radius:14px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:0;height:0;border-top:15px solid transparent;border-bottom:15px solid transparent;border-left:24px solid white;margin-left:4px;"></div>
+        </div>
+      </div>
+
+      <div id="vt-yt-3" style="position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;cursor:pointer;" onclick="document.getElementById('vt-yt-3').innerHTML='&lt;iframe src=\'https://www.youtube.com/embed/oO1nUIZRhjM?rel=0&amp;autoplay=1&amp;playsinline=1\' frameborder=\'0\' allow=\'autoplay;encrypted-media\' allowfullscreen style=\'width:100%;height:100%;position:absolute;top:0;left:0;\'&gt;&lt;/iframe&gt;'">
+        <img src="https://i.ytimg.com/vi/oO1nUIZRhjM/hqdefault.jpg" alt="Student testimonial" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:78px;height:56px;background:#2F6FEB;border-radius:14px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:0;height:0;border-top:15px solid transparent;border-bottom:15px solid transparent;border-left:24px solid white;margin-left:4px;"></div>
+        </div>
+      </div>
+
+      <div id="vt-yt-4" style="position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;cursor:pointer;" onclick="document.getElementById('vt-yt-4').innerHTML='&lt;iframe src=\'https://www.youtube.com/embed/-K6j3a73-Kc?rel=0&amp;autoplay=1&amp;playsinline=1\' frameborder=\'0\' allow=\'autoplay;encrypted-media\' allowfullscreen style=\'width:100%;height:100%;position:absolute;top:0;left:0;\'&gt;&lt;/iframe&gt;'">
+        <img src="https://i.ytimg.com/vi/-K6j3a73-Kc/hqdefault.jpg" alt="Student testimonial" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:78px;height:56px;background:#2F6FEB;border-radius:14px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:0;height:0;border-top:15px solid transparent;border-bottom:15px solid transparent;border-left:24px solid white;margin-left:4px;"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU'LL BE ABLE TO CREATE -->
+<section class="sec-wrap gray">
+  <div class="sec-inner">
+    <div class="vt-arrows">
+      <div class="vt-arrow">↓</div>
+      <div class="vt-arrow">↓</div>
+      <div class="vt-arrow">↓</div>
+    </div>
+    <div class="vt-grid">
+
+      <!-- 1: Wedding Films -->
+      <div class="vt-card">
+        <div class="vt-avatar" style="background:linear-gradient(135deg,#2F6FEB,#5AC8FA);display:flex;align-items:center;justify-content:center;font-size:44px;">💒</div>
+        <div class="vt-name">Wedding Highlight Film</div>
+        <div class="vt-built">📸 Cinematic Wedding Recap</div>
+        <div class="vt-quote">"A complete cinematic wedding highlight — shot, edited & scored entirely with AI in under 30 minutes."</div>
+      </div>
+
+      <!-- 2: Brand Ad Films -->
+      <div class="vt-card">
+        <div class="vt-avatar" style="background:linear-gradient(135deg,#2F6FEB,#5AC8FA);display:flex;align-items:center;justify-content:center;font-size:44px;">📢</div>
+        <div class="vt-name">Brand Ad Film</div>
+        <div class="vt-built">📦 30-Second Product Ad</div>
+        <div class="vt-quote">"A polished product ad film — script to final cut — with zero camera crew or studio."</div>
+      </div>
+
+      <!-- 3: Music Videos -->
+      <div class="vt-logo-card">
+        <div class="vt-logo-wrap" style="background:linear-gradient(135deg,#2F6FEB,#5AC8FA);display:flex;align-items:center;justify-content:center;font-size:40px;">🎵</div>
+        <div class="vt-biz-name">Music Video</div>
+        <div class="vt-biz-type">🎶 AI-Generated Visuals</div>
+        <div class="vt-biz-quote">"A full music video with AI visuals synced to the beat, built in a single workshop session."</div>
+      </div>
+
+      <!-- 4: Short Films -->
+      <div class="vt-logo-card">
+        <div class="vt-logo-wrap" style="background:linear-gradient(135deg,#101A3D,#22335C);display:flex;align-items:center;justify-content:center;font-size:40px;">🎥</div>
+        <div class="vt-biz-name">Short Film</div>
+        <div class="vt-biz-type">🎬 Narrative Drama</div>
+        <div class="vt-biz-quote">"A short narrative film — scenes, dialogue & transitions — generated end-to-end with AI."</div>
+      </div>
+
+      <!-- 5: Social Reels -->
+      <div class="vt-logo-card">
+        <div class="vt-logo-wrap" style="background:linear-gradient(135deg,#1B4DB3,#2F6FEB);display:flex;align-items:center;justify-content:center;font-size:40px;">📱</div>
+        <div class="vt-biz-name">Instagram Reel Series</div>
+        <div class="vt-biz-type">📱 Scroll-Stopping Content</div>
+        <div class="vt-biz-quote">"A batch of scroll-stopping Reels, ready to post the same day you create them."</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TSUNAMI SECTION -->
+<section class="sec-wrap">
+  <div class="sec-inner">
+    <h2 class="sec-title">Get Your Film Ready For The World<br/>Faster Than You Could Possibly Imagine! <span class="r ul">(ON AUTOPILOT)</span></h2>
+    <div class="sec-divider"></div>
+    <div class="results-2col" style="margin-top:36px;">
+      <div class="results-img">
+        <img src="images/alex-photo-1.png" alt="Alex — Founder, AI FilmCraft" style="width:100%;aspect-ratio:4/5;max-height:400px;object-fit:cover;object-position:center 20%;display:block;"/>
+        <div style="text-align:center;margin-top:12px;">
+          <p style="font-size:16px;font-weight:800;color:#F0F0F0;margin:0;">Alex</p>
+          <p style="font-size:13px;color:#AAA;margin:2px 0 0;">Founder — AI FilmCraft</p>
+        </div>
+      </div>
+      <div class="results-box">
+        <h3>What if YOU could just...</h3>
+        <div class="rb-list">
+          <div class="rb-item"><div class="rb-dot"></div><p>1) Describe your film idea in plain Hindi or English...</p></div>
+          <div class="rb-item"><div class="rb-dot"></div><p>2) Let AI generate the entire film for you in minutes...</p></div>
+          <div class="rb-item"><div class="rb-dot"></div><p>3) Then simply publish it on YouTube or Instagram same day!</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OLD WAY VS NEW WAY -->
+<section class="sec-wrap gray">
+  <div class="sec-inner">
+    <h2 class="sec-title">You Can Keep Paying Editors The Hard Way...<br/>Or <span style="background:var(--yellow);padding:0 6px;border-radius:3px;color:var(--navy);">Learn The Skill That Changes Everything</span></h2>
+    <div class="compare-wrap">
+      <div class="compare-story">
+        <p>Before I discovered AI Moviemaking, I was tired of watching great stories die because film crews were too expensive or too slow.</p>
+        <p>I was frustrated seeing creators pay ₹2–5 Lakhs and wait months just for a basic promotional film.</p>
+        <p>And eventually, <strong>I discovered that AI could generate cinematic films in 30 minutes for free.</strong></p>
+        <p>So I set out to master this method and build a system I could teach to anyone.</p>
+        <p>And, that's how the <strong>AI Moviemaking System</strong> was born.</p>
+      </div>
+      <div class="compare-table">
+        <div class="compare-heads">
+          <div class="compare-head old">The Old Way<br/><small style="font-weight:400;font-size:11px;">Hire A Film Crew</small></div>
+          <div class="compare-head new">The New Way<br/><small style="font-weight:400;font-size:11px;">AI Film Maker</small></div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell old-cell"><span class="cx">✗</span> <span class="compare-label manual">Manual</span> Pay ₹2–5 Lakhs</div>
+          <div class="compare-cell new-cell"><span class="cv">✓</span> <span class="compare-label auto">Auto</span> Create for FREE</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell old-cell"><span class="cx">✗</span> <span class="compare-label manual">Manual</span> Wait 3–6 Months</div>
+          <div class="compare-cell new-cell"><span class="cv">✓</span> <span class="compare-label auto">Auto</span> Done in 30 Minutes</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell old-cell"><span class="cx">✗</span> <span class="compare-label manual">Manual</span> Depend on Film Crew</div>
+          <div class="compare-cell new-cell"><span class="cv">✓</span> <span class="compare-label auto">Auto</span> 100% Self-Sufficient</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell old-cell"><span class="cx">✗</span> <span class="compare-label manual">Manual</span> Pay for Every Reshoot</div>
+          <div class="compare-cell new-cell"><span class="cv">✓</span> <span class="compare-label auto">Auto</span> Re-edit Yourself Free</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell old-cell"><span class="cx">✗</span> No Editing Skills = No Film</div>
+          <div class="compare-cell new-cell"><span class="cv">✓</span> No Editing Skills Needed!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BLOCK 3 -->
+<div class="cta-block">
+  <a href="#book" class="enroll-btn">
+    <span class="seats-badge">49 Seats Left</span>
+    🎬 Create My Film Now <span class="old">₹999</span> ₹99 →
+  </a>
+  <div class="progress-bar">
+    <div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div>
+    <div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div>
+    <div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div>
+    <div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div>
+    <div class="pb-box"></div><div class="pb-box"></div>
+  </div>
+  <div class="hurry">⚠️ Hurry! Seats For This Workshop Are Low</div>
+</div>
+
+<!-- AGENDA -->
+<section class="sec-wrap gray">
+  <div class="sec-inner">
+    <h2 class="sec-title">Results Driven Agenda For <span class="ul">30-Min AI Moviemaking</span><br/>Workshop</h2>
+    <div class="sec-divider"></div>
+    <div class="agenda-grid">
+      <div class="agenda-card">
+        <div class="agenda-img" style="background:#000;">
+          <!-- CREATE: video embed -->
+          <div class="agenda-anim" style="background:#000;">
+            <div style="position:relative;width:100%;height:100%;">
+              <iframe src="https://www.youtube.com/embed/LqreeZ6SkFw?rel=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=LqreeZ6SkFw&amp;controls=0&amp;playsinline=1" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen style="width:100%;height:100%;position:absolute;top:0;left:0;"></iframe>
+            </div>
+          </div>
+          <div class="agenda-day-badge">☀️ Part 01</div>
+          <div class="agenda-day-title">Create Cinematic Movie</div>
+        </div>
+        <div class="agenda-body">
+          <div class="ag-item"><div class="ag-dot"></div> The AI Film Formula — exact prompts that generate any scene instantly.</div>
+          <div class="ag-item"><div class="ag-dot"></div> Choose the right AI tool for your specific film style.</div>
+          <div class="ag-item"><div class="ag-dot"></div> Describe your idea — watch AI generate it live in real time.</div>
+          <div class="ag-item"><div class="ag-dot"></div> The one mistake that makes most AI films look fake.</div>
+        </div>
+      </div>
+      <div class="agenda-card">
+        <div class="agenda-img" style="background:linear-gradient(135deg,#101A3D,#1B4DB3);">
+          <!-- EDITING + MONETIZE ANIMATION -->
+          <div class="agenda-anim">
+            <div style="width:172px;background:#14203f;border-radius:12px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.5);">
+              <div style="background:#1c2b52;padding:6px 9px;display:flex;align-items:center;gap:5px;">
+                <div style="width:7px;height:7px;border-radius:50%;background:#ff5f57;"></div>
+                <div style="width:7px;height:7px;border-radius:50%;background:#febc2e;"></div>
+                <div style="width:7px;height:7px;border-radius:50%;background:#28c840;"></div>
+                <div style="color:#8fa3d9;font-size:8px;margin-left:6px;letter-spacing:.3px;">film-edit.ai</div>
+              </div>
+              <div style="padding:10px 10px 8px;">
+                <div style="display:flex;align-items:flex-end;gap:2px;height:26px;margin-bottom:9px;">
+                  <div style="flex:1;background:#2F6FEB;height:40%;border-radius:2px;"></div>
+                  <div style="flex:1;background:#5AC8FA;height:70%;border-radius:2px;"></div>
+                  <div style="flex:1;background:#2F6FEB;height:100%;border-radius:2px;"></div>
+                  <div style="flex:1;background:#5AC8FA;height:55%;border-radius:2px;"></div>
+                  <div style="flex:1;background:#2F6FEB;height:85%;border-radius:2px;"></div>
+                  <div style="flex:1;background:#5AC8FA;height:35%;border-radius:2px;"></div>
+                  <div style="flex:1;background:#2F6FEB;height:65%;border-radius:2px;"></div>
+                  <div style="flex:1;background:#5AC8FA;height:95%;border-radius:2px;"></div>
+                  <div style="flex:1;background:#2F6FEB;height:50%;border-radius:2px;"></div>
+                </div>
+                <div style="display:flex;flex-wrap:wrap;gap:4px;">
+                  <span style="background:rgba(90,200,250,.15);color:#5AC8FA;font-size:7.5px;font-weight:700;padding:3px 6px;border-radius:10px;">🎙️ AI Voice</span>
+                  <span style="background:rgba(90,200,250,.15);color:#5AC8FA;font-size:7.5px;font-weight:700;padding:3px 6px;border-radius:10px;">🎨 Color Grade</span>
+                  <span style="background:rgba(90,200,250,.15);color:#5AC8FA;font-size:7.5px;font-weight:700;padding:3px 6px;border-radius:10px;">✨ VFX</span>
+                </div>
+              </div>
+            </div>
+            <div class="pay-notif" style="left:auto;right:6px;top:8px;width:110px;">
+              <div class="pay-n-title" style="font-size:7px;">✅ Payment Received!</div>
+              <div class="pay-n-amt" style="font-size:11px;">₹15,000</div>
+              <div class="pay-n-from" style="font-size:6px;">Razorpay · Client Booking</div>
+            </div>
+            <div class="money-float mf1">₹</div>
+            <div class="money-float mf2">💰</div>
+          </div>
+          <div class="agenda-day-badge">☀️ Part 02</div>
+          <div class="agenda-day-title">Add VFX & Monetize</div>
+        </div>
+        <div class="agenda-body">
+          <div class="ag-item"><div class="ag-dot"></div> Add AI voiceover & background score — bring your film to life instantly.</div>
+          <div class="ag-item"><div class="ag-dot"></div> Add client booking & payment links — start getting paid for your films.</div>
+          <div class="ag-item"><div class="ag-dot"></div> Customize your cinematic look — color grading, style, branding, all by typing.</div>
+          <div class="ag-item"><div class="ag-dot"></div> The 5-minute method to add any VFX effect you can imagine.</div>
+        </div>
+      </div>
+      <div class="agenda-card">
+        <div class="agenda-img" style="background:linear-gradient(135deg,#1a237e,#283593);">
+          <!-- PUBLISH ANIMATION: YouTube player style card -->
+          <div class="agenda-anim" style="background:linear-gradient(135deg,#1a237e,#283593);">
+            <div style="width:176px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.45);">
+              <div style="position:relative;width:100%;aspect-ratio:16/9;background:#000;">
+                <iframe src="https://www.youtube.com/embed/LqreeZ6SkFw?rel=0&amp;autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=LqreeZ6SkFw&amp;controls=0&amp;playsinline=1" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen style="width:100%;height:100%;position:absolute;top:0;left:0;"></iframe>
+                <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(255,255,255,.3);z-index:2;"><div style="width:63%;height:100%;background:#FF0000;"></div></div>
+                <div style="position:absolute;bottom:5px;right:5px;background:rgba(0,0,0,.75);color:#fff;font-size:7px;padding:1px 4px;border-radius:2px;z-index:2;">2:14</div>
+              </div>
+              <div style="padding:8px 9px;">
+                <div style="font-size:9px;font-weight:800;color:#111;line-height:1.3;">My AI Film — Cinematic Trailer</div>
+                <div style="font-size:7px;color:#888;margin-top:3px;">AI Film Studio · 2.1K views</div>
+                <div style="font-size:7px;color:#01875f;font-weight:800;margin-top:4px;">✅ Published on YouTube!</div>
+              </div>
+            </div>
+            <div style="position:absolute;top:10px;right:10px;background:#fff;border-radius:8px;padding:6px 9px;box-shadow:0 6px 18px rgba(0,0,0,.35);">
+              <div style="font-size:7px;font-weight:800;color:#01875f;">💼 New Client Inquiry</div>
+              <div style="font-size:11px;font-weight:900;color:#111;">₹45,000</div>
+              <div style="font-size:6px;color:#888;">Brand Promo Film</div>
+            </div>
+          </div>
+          <div class="agenda-day-badge">☀️ Part 03</div>
+          <div class="agenda-day-title">Publish & Sell</div>
+        </div>
+        <div class="agenda-body">
+          <div class="ag-item"><div class="ag-dot"></div> Publish your film and get a shareable link immediately.</div>
+          <div class="ag-item"><div class="ag-dot"></div> How to land your first paying client for an AI brand film.</div>
+          <div class="ag-item"><div class="ag-dot"></div> Build a portfolio that attracts ₹25,000–₹95,000 projects.</div>
+          <div class="ag-item"><div class="ag-dot"></div> Live Q&A — all your doubts answered by the instructor.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BONUSES -->
+<section class="sec-wrap" id="bonuses">
+  <div class="sec-inner" style="text-align:center;">
+    <h2 class="sec-title">Get INSANE Bonuses <span style="color:#2F6FEB;">(Previously Sold For<br/><span class="hl">₹24,997</span>)</span></h2>
+    <div class="sec-divider"></div>
+    <div class="bonus-mockup">
+      <div style="background:linear-gradient(135deg,#0d1b6e,#1565c0);border-radius:16px;padding:40px;display:inline-block;margin-top:20px;">
+        <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;">
+          <div style="background:rgba(255,255,255,.1);border-radius:10px;padding:20px;color:#fff;font-size:13px;font-weight:700;text-align:center;min-width:140px;">📋<br/>AI Film Prompt<br/>Cheat Sheet</div>
+          <div style="background:rgba(255,255,255,.1);border-radius:10px;padding:20px;color:#fff;font-size:13px;font-weight:700;text-align:center;min-width:140px;">📹<br/>Lifetime<br/>Recording</div>
+          <div style="background:rgba(255,255,255,.1);border-radius:10px;padding:20px;color:#fff;font-size:13px;font-weight:700;text-align:center;min-width:140px;">💬<br/>WhatsApp<br/>Community</div>
+          <div style="background:rgba(255,255,255,.1);border-radius:10px;padding:20px;color:#fff;font-size:13px;font-weight:700;text-align:center;min-width:140px;">🎓<br/>Certificate of<br/>Completion</div>
+        </div>
+      </div>
+    </div>
+    <div class="bonuses-grid" style="margin-top:30px;">
+      <div class="bonus-card">
+        <div class="bonus-tag">🎁 Bonus 01</div>
+        <div class="bonus-content">
+          <div class="bonus-title">AI Film Prompt Cheat Sheet</div>
+          <div class="bonus-pts">
+            <div class="bonus-pt"><div class="bdot"></div> 50+ ready-made prompts to generate any type of film scene instantly.</div>
+            <div class="bonus-pt"><div class="bdot"></div> Copy-paste prompts for wedding films, ad films, music videos, short films.</div>
+            <div class="bonus-pt"><div class="bdot"></div> Prompts to add VFX, voiceovers & transitions.</div>
+            <div class="bonus-pt"><div class="bdot"></div> 10x better than typical generic AI prompts.</div>
+          </div>
+        </div>
+        <div class="bonus-footer"><span class="strike">₹4,999</span> FREE</div>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-tag">🎁 Bonus 02</div>
+        <div class="bonus-content">
+          <div class="bonus-title">Lifetime Recording Access</div>
+          <div class="bonus-pts">
+            <div class="bonus-pt"><div class="bdot"></div> Watch the full workshop recording anytime, forever.</div>
+            <div class="bonus-pt"><div class="bdot"></div> Rewatch to create more films for your different projects.</div>
+            <div class="bonus-pt"><div class="bdot"></div> Access all future updated recordings at no extra cost.</div>
+            <div class="bonus-pt"><div class="bdot"></div> Share with your team members too.</div>
+          </div>
+        </div>
+        <div class="bonus-footer">PRICELESS</div>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-tag">🎁 Bonus 03</div>
+        <div class="bonus-content">
+          <div class="bonus-title">Private WhatsApp Community</div>
+          <div class="bonus-pts">
+            <div class="bonus-pt"><div class="bdot"></div> Join our growing filmmaker community — get help anytime you need.</div>
+            <div class="bonus-pt"><div class="bdot"></div> Answering all your Q&As from the instructor.</div>
+            <div class="bonus-pt"><div class="bdot"></div> Weekly tips and new AI tools shared in the group.</div>
+            <div class="bonus-pt"><div class="bdot"></div> And much more exclusive content!</div>
+          </div>
+        </div>
+        <div class="bonus-footer"><span class="strike">₹3,999</span> FREE</div>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-tag">🎁 Bonus 04</div>
+        <div class="bonus-content">
+          <div class="bonus-title">Film Monetization Workbook & Cheat Sheets</div>
+          <div class="bonus-pts">
+            <div class="bonus-pt"><div class="bdot"></div> Downloadable workbooks to plan your film projects.</div>
+            <div class="bonus-pt"><div class="bdot"></div> Cheat sheets to monetize your films & reels from Day 1.</div>
+            <div class="bonus-pt"><div class="bdot"></div> Access to your private resource vault.</div>
+            <div class="bonus-pt"><div class="bdot"></div> And so much more exclusive material.</div>
+          </div>
+        </div>
+        <div class="bonus-footer">PRICELESS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<div class="price-section" id="book">
+  <span class="handwritten">YES! Save My Spot For The 'AI Moviemaking Workshop!!'</span>
+  <div class="price-table">
+    <div style="padding:8px 0 0 0;background:var(--navy);display:flex;justify-content:center;">
+      <div class="pt-header">LAST FEW SEATS</div>
+    </div>
+    <div class="pt-row active">
+      <div class="pt-cell" style="font-weight:800;">First 50 Seats</div>
+      <div class="pt-cell price">₹99</div>
+      <div class="pt-cell" style="color:#27ae60;font-size:13px;font-weight:700;">with Bonus Gifts!!!</div>
+    </div>
+    <div class="pt-row faded">
+      <div class="pt-cell" style="color:#aaa;">50–100 Seats</div>
+      <div class="pt-cell price-faded">₹599</div>
+      <div class="pt-cell" style="color:#bbb;font-size:13px;">without Bonus Gifts</div>
+    </div>
+    <div class="pt-row faded">
+      <div class="pt-cell" style="color:#ccc;">100–200 Seats</div>
+      <div class="pt-cell price-faded">₹999</div>
+      <div class="pt-cell" style="color:#ccc;font-size:13px;">without Bonus Gifts</div>
+    </div>
+  </div>
+  <div class="price-today">
+    Price Today: <span class="strike">₹999</span> <span class="strike">₹599</span> <span class="green">₹99/-</span>
+  </div>
+  <a href="#" class="enroll-btn" style="max-width:500px;font-size:18px;">
+    <span class="seats-badge">49 Seats Left</span>
+    🎬 Create My Film Now <span class="old">₹999</span> ₹99 →
+  </a>
+  <div class="progress-bar" style="margin-top:16px;">
+    <div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div>
+    <div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div>
+    <div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div>
+    <div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div><div class="pb-box"></div>
+    <div class="pb-box"></div><div class="pb-box"></div>
+  </div>
+  <div class="hurry">⚠️ Hurry! Seats For This Workshop Are Low</div>
+</div>
+
+<!-- 110% MONEY BACK GUARANTEE -->
+<div style="background:#0B1330;padding:48px 20px;text-align:center;border-top:1px solid #222;border-bottom:1px solid #222;">
+  <div style="max-width:680px;margin:0 auto;">
+    <div style="width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,#2F6FEB,#5AC8FA);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 32px rgba(47,111,235,.4);">
+      <span style="font-size:42px;">🛡️</span>
+    </div>
+    <h2 style="font-size:clamp(28px,4vw,44px);font-weight:900;color:#2F6FEB;margin-bottom:10px;line-height:1.2;">110% Money Back Guarantee</h2>
+    <p style="font-size:18px;font-weight:700;color:#fff;margin-bottom:20px;">Agar aap 30 minutes mein apni film nahi bana paye — hum aapko <span style="color:#2F6FEB;">110% refund</span> denge. Zero risk.</p>
+    <div style="background:#101A3D;border:2px solid rgba(47,111,235,.3);border-radius:16px;padding:24px 28px;text-align:left;margin-bottom:24px;">
+      <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;">
+        <span style="font-size:20px;flex-shrink:0;">✅</span>
+        <p style="font-size:15px;color:#CCC;line-height:1.6;"><strong style="color:#fff;">Workshop attend karo</strong> — live session mein aao, sabh seekho.</p>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;">
+        <span style="font-size:20px;flex-shrink:0;">✅</span>
+        <p style="font-size:15px;color:#CCC;line-height:1.6;"><strong style="color:#fff;">Apni film banane ki koshish karo</strong> — 30 minutes mein, live.</p>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:14px;">
+        <span style="font-size:20px;flex-shrink:0;">✅</span>
+        <p style="font-size:15px;color:#CCC;line-height:1.6;"><strong style="color:#fff;">Agar success nahi mila</strong> — full ₹99 + extra ₹25 = <span style="color:#2F6FEB;font-weight:800;">₹124 wapas</span>. No questions asked.</p>
+      </div>
+    </div>
+    <p style="font-size:13px;color:#666;">🔐 Payment secured by Razorpay &nbsp;|&nbsp; Risk-free enrollment</p>
+  </div>
+</div>
+
+<!-- INSTRUCTOR CARD -->
+<section class="sec-wrap" style="padding:48px 0;">
+  <div class="sec-inner" style="text-align:center;">
+    <h2 class="sec-title">Meet Your <span class="hl">Instructor</span></h2>
+    <div class="sec-divider"></div>
+    <div style="max-width:380px;margin:32px auto 0;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);">
+      <div style="width:100%;height:340px;overflow:hidden;">
+        <img src="images/alex-photo-1.png" alt="Alex — Founder, AI FilmCraft" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;"/>
+      </div>
+      <div style="padding:20px 24px 24px;">
+        <p style="font-size:20px;font-weight:900;color:#0d1b6e;margin:0 0 4px;">Alex</p>
+        <p style="font-size:14px;color:#2F6FEB;font-weight:700;margin:0 0 10px;">Founder — AI FilmCraft</p>
+        <p style="font-size:13px;color:#555;line-height:1.6;margin:0;">Helping creators make cinematic AI films — no camera crew, no editing skills, no budget required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="about-box">
+    <div style="text-align:center;">
+      <div class="about-photo-circle" style="margin:0 auto;overflow:hidden;">
+        <img src="images/alex-photo-2.jpeg" alt="Alex — Founder, AI FilmCraft" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+      </div>
+    </div>
+    <div>
+      <h2>Who Is Alex And Why Should You Care?</h2>
+      <p style="font-size:15px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:4px;letter-spacing:.3px;">
+        <span style="color:#5AC8FA;">Alex</span> &nbsp;·&nbsp; Founder, <span style="text-decoration:underline;text-underline-offset:3px;">AI FilmCraft</span>
+      </p>
+      <div class="about-divider"></div>
+      <div class="about-list">
+        <div class="about-item"><div class="about-dot"></div><p>Passionate about merging <u>cinema & AI</u> to help anyone tell their story.</p></div>
+        <div class="about-item"><div class="about-dot"></div><p>Creator of the <u>AI Moviemaking System</u> taught in this workshop.</p></div>
+        <div class="about-item"><div class="about-dot"></div><p>Believes every creator can be their own <u>film studio</u> — no crew required.</p></div>
+        <div class="about-item"><div class="about-dot"></div><p>Constantly testing the newest AI video & voice tools so you don't have to.</p></div>
+        <div class="about-item"><div class="about-dot"></div><p>On a mission to make <u>cinematic storytelling</u> accessible to everyone.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="sec-inner" style="text-align:center;">
+    <h2 class="sec-title"><span class="hl">Frequently</span> Asked Questions</h2>
+    <div class="sec-divider"></div>
+    <div class="faq-list">
+      <details open>
+        <summary>Kya mujhe editing ya camera ka experience chahiye?</summary>
+        <div class="faq-body">Bilkul nahi! Yeh workshop specifically un logon ke liye hai jinhe moviemaking ya editing ka zero knowledge hai. Sirf apna story idea type karo Hindi ya English mein — AI baaki sab khud karta hai.</div>
+      </details>
+      <details>
+        <summary>Kitne time mein film ban jayegi?</summary>
+        <div class="faq-body">Workshop ke andar hi — sirf 30 minutes mein aapki film ready ho jayegi. Live, real-time, step-by-step aapke saamne.</div>
+      </details>
+      <details>
+        <summary>Is there a guarantee?</summary>
+        <div class="faq-body">100% Money Back Guarantee. Agar workshop pasand nahi aayi — koi sawaal nahi, full refund. Simple.</div>
+      </details>
+      <details>
+        <summary>When can I access the bonuses?</summary>
+        <div class="faq-body">Immediately after enrollment — all bonuses are delivered to your WhatsApp and email right away.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Copyright © 2026, AI Moviemaking Workshop. All rights reserved.</p>
+  <p style="margin-top:8px;">This site is not a part of Meta™ Inc. All content is for informational and promotional purposes only. Results may vary.</p>
+  <p style="margin-top:14px;font-size:13px;color:rgba(255,255,255,.7);">
+    📞 Need help? Call or WhatsApp: <a href="#" style="color:#5AC8FA;font-weight:700;">+91-XXXXXXXXXX</a>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    📧 Email: <a href="mailto:yourname@aifilmcraft.com" style="color:#5AC8FA;font-weight:700;">yourname@aifilmcraft.com</a>
+  </p>
+</footer>
+
+<!-- STICKY BOTTOM BAR -->
+<div class="sticky">
+  <div class="sticky-left">
+    <div class="sticky-price"><span class="strike">₹999</span> ₹99</div>
+    <div class="sticky-close">Registration closing soon!</div>
+  </div>
+  <div class="sticky-center">
+    <strong>Get Bonuses worth ₹24,997/- for free</strong>
+    <div style="font-size:11px;color:#2F6FEB;font-weight:700;margin-top:2px;">🛡️ 110% Money Back Guarantee</div>
+  </div>
+  <a href="#book" class="sticky-btn">
+    ENROLL NOW ₹99 →
+    <small>Get Bonuses worth 24,997/-</small>
+  </a>
+</div>
+
+<!-- ── LEAD FORM MODAL ── -->
+<div id="rzp-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:20px;padding:40px 36px;max-width:460px;width:92%;position:relative;box-shadow:0 24px 60px rgba(0,0,0,.35);">
+    <!-- close -->
+    <button onclick="closeModal()" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:26px;cursor:pointer;color:#999;">×</button>
+    <!-- header -->
+    <div style="text-align:center;margin-bottom:28px;">
+      <div style="background:#5AC8FA;display:inline-block;padding:6px 20px;border-radius:30px;font-size:13px;font-weight:800;color:#0d1b6e;margin-bottom:14px;">🔥 ONLY 49 SEATS LEFT</div>
+      <h2 style="font-size:22px;font-weight:900;color:#0d1b6e;line-height:1.3;">One Step Away From<br/>Creating Your First AI Film!</h2>
+      <p style="font-size:13px;color:#777;margin-top:8px;">Enter your details to proceed to payment</p>
+    </div>
+    <!-- form -->
+    <form id="rzp-form" onsubmit="startPayment(event)">
+      <div style="margin-bottom:16px;">
+        <label style="font-size:13px;font-weight:700;color:#333;display:block;margin-bottom:6px;">Full Name *</label>
+        <input id="rzp-name" type="text" placeholder="Enter your full name" required
+          style="width:100%;padding:14px 16px;border:2px solid #e0e0e0;border-radius:10px;font-size:15px;outline:none;font-family:inherit;"
+          onfocus="this.style.borderColor='#0d1b6e'" onblur="this.style.borderColor='#e0e0e0'"/>
+      </div>
+      <div style="display:none;">
+        <input id="rzp-email" type="email" placeholder="Enter your email"
+          style="width:100%;padding:14px 16px;border:2px solid #e0e0e0;border-radius:10px;font-size:15px;outline:none;font-family:inherit;"/>
+      </div>
+      <div style="margin-bottom:24px;">
+        <label style="font-size:13px;font-weight:700;color:#333;display:block;margin-bottom:6px;">WhatsApp Number *</label>
+        <div style="display:flex;gap:10px;">
+          <div style="background:#f5f5f5;border:2px solid #e0e0e0;border-radius:10px;padding:14px 14px;font-size:15px;font-weight:700;color:#333;flex-shrink:0;">+91</div>
+          <input id="rzp-phone" type="tel" placeholder="10-digit mobile number" required maxlength="10" pattern="[0-9]{10}"
+            style="flex:1;padding:14px 16px;border:2px solid #e0e0e0;border-radius:10px;font-size:15px;outline:none;font-family:inherit;"
+            onfocus="this.style.borderColor='#0d1b6e'" onblur="this.style.borderColor='#e0e0e0'"/>
+        </div>
+      </div>
+      <!-- ── ORDER BUMP ── -->
+      <div id="bump-box" onclick="toggleBump()" style="cursor:pointer;background:linear-gradient(135deg,#fff8e1,#fff3cd);border:2.5px dashed #f59e0b;border-radius:14px;padding:14px 16px;margin-bottom:18px;display:flex;align-items:flex-start;gap:12px;transition:border-color 0.2s,background 0.2s;">
+        <div style="flex-shrink:0;margin-top:2px;">
+          <div id="bump-check" style="width:22px;height:22px;border-radius:6px;border:2.5px solid #f59e0b;background:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;transition:all 0.2s;"></div>
+        </div>
+        <div style="flex:1;">
+          <div style="font-size:12px;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">⚡ Add-On — Check This Box!</div>
+          <div style="font-size:15px;font-weight:900;color:#1a1a1a;margin-bottom:4px;">🎥 Get the Full Workshop Recording</div>
+          <div style="font-size:13px;color:#555;line-height:1.5;margin-bottom:6px;">Can't attend live? Miss anything? Get lifetime access to the complete recording — rewatch anytime, forever.</div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="font-size:16px;font-weight:900;color:#e8251a;">Only ₹100 extra</span>
+            <span style="font-size:13px;color:#aaa;text-decoration:line-through;">₹299</span>
+            <span style="background:#16a34a;color:#fff;font-size:11px;font-weight:800;padding:2px 8px;border-radius:20px;">67% OFF</span>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" id="rzp-pay-btn"
+        style="width:100%;background:linear-gradient(135deg,#e8251a,#ff4444);color:#fff;border:none;border-radius:50px;padding:18px;font-size:18px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-family:inherit;">
+        🔒 Pay ₹99 &amp; Secure My Seat →
+      </button>
+      <p style="text-align:center;font-size:12px;color:#aaa;margin-top:12px;">
+        🔐 100% Secure Payment via Razorpay &nbsp;|&nbsp; ✅ Money Back Guarantee
+      </p>
+    </form>
+  </div>
+</div>
+
+<!-- TODO: replace YOUR_PAYMENT_LINK_ID, YOUR_PAYMENT_LINK_ID_BUMP, YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL, YOUR_PIXEL_ID and YOUR_CLARITY_ID above with your own before going live -->
+<!-- ── PAYMENT LOGIC ── -->
+<script>
+  const PAYMENT_LINK      = 'https://pages.razorpay.com/YOUR_PAYMENT_LINK_ID/view'; // ₹99 — live only
+  const PAYMENT_LINK_BUMP = 'https://pages.razorpay.com/YOUR_PAYMENT_LINK_ID_BUMP/view'; // ₹199 — live + recording
+  const WORKSHOP_DATE     = 'Aug 20';   // ← CHANGE DATE HERE — WhatsApp message updates automatically
+  var bumpSelected = false;
+
+  function toggleBump() {
+    bumpSelected = !bumpSelected;
+    var box   = document.getElementById('bump-box');
+    var check = document.getElementById('bump-check');
+    var btn   = document.getElementById('rzp-pay-btn');
+    if (bumpSelected) {
+      check.innerHTML  = '✅';
+      check.style.background    = '#f59e0b';
+      check.style.borderColor   = '#f59e0b';
+      box.style.background      = 'linear-gradient(135deg,#fef3c7,#fde68a)';
+      box.style.borderColor     = '#d97706';
+      box.style.borderStyle     = 'solid';
+      btn.innerHTML = '🔒 Pay ₹199 &amp; Get Recording →';
+    } else {
+      check.innerHTML  = '';
+      check.style.background    = '#fff';
+      check.style.borderColor   = '#f59e0b';
+      box.style.background      = 'linear-gradient(135deg,#fff8e1,#fff3cd)';
+      box.style.borderColor     = '#f59e0b';
+      box.style.borderStyle     = 'dashed';
+      btn.innerHTML = '🔒 Pay ₹99 &amp; Secure My Seat →';
+    }
+  }
+  const APPS_SCRIPT  = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
+
+  // Open modal when any enroll button clicked
+  document.querySelectorAll('.enroll-btn, .sticky-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  function openModal() {
+    const m = document.getElementById('rzp-modal');
+    m.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    const m = document.getElementById('rzp-modal');
+    m.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  // Close on backdrop click
+  document.getElementById('rzp-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  function startPayment(e) {
+    e.preventDefault();
+    const name  = document.getElementById('rzp-name').value.trim();
+    const phone = '+91' + document.getElementById('rzp-phone').value.trim();
+    const email = phone.replace('+', '') + '@aifilmcraft.in';
+    document.getElementById('rzp-email').value = email;
+
+    if (!name || !phone || phone.length < 13) {
+      alert('Please fill all fields correctly.');
+      return;
+    }
+
+    const btn = document.getElementById('rzp-pay-btn');
+    btn.disabled = true;
+    btn.innerHTML = '⏳ Opening Payment...';
+
+    const amount   = bumpSelected ? 19900 : 9900;
+    const leadData = { name, email, phone, paymentId: 'PAYMENT_INITIATED', amount };
+
+    // Save to sessionStorage
+    try {
+      sessionStorage.setItem('buyer_name', name.split(' ')[0]);
+      sessionStorage.setItem('pending_lead', JSON.stringify(leadData));
+    } catch(err) {}
+
+    // Fire Meta Pixel events — ONCE only
+    if (typeof fbq !== 'undefined') {
+      if (!sessionStorage.getItem('checkout_fired')) {
+        fbq('track', 'InitiateCheckout', { value: 99, currency: 'INR' });
+        fbq('track', 'Lead');
+        sessionStorage.setItem('checkout_fired', '1');
+      }
+    }
+
+    // Fire lead save in background — non-blocking
+    saveLead(leadData);
+
+    // Build Razorpay URL with pre-filled details
+    const rawPhone   = document.getElementById('rzp-phone').value.trim();
+    const activeLink = bumpSelected ? PAYMENT_LINK_BUMP : PAYMENT_LINK;
+    const finalLink  = activeLink
+      + '?name='    + encodeURIComponent(name)
+      + '&email='   + encodeURIComponent(email)
+      + '&contact=' + encodeURIComponent(rawPhone);
+
+    // REDIRECT IMMEDIATELY
+    window.location.href = finalLink;
+  }
+
+  function saveLead(data) {
+    try {
+      const payload = JSON.stringify({
+        name:      data.name,
+        email:     data.email,
+        phone:     data.phone,
+        paymentId: data.paymentId || 'LEAD',
+        amount:    data.amount || null
+      });
+      // Use GET request — same method that works on thank you page for paid leads
+      const params = new URLSearchParams({
+        name:      data.name,
+        email:     data.email,
+        phone:     data.phone,
+        paymentId: data.paymentId || 'LEAD'
+      });
+      const url = APPS_SCRIPT + '?' + params.toString();
+      // GET request that survives page navigation (the Apps Script only accepts GET;
+      // navigator.sendBeacon sends a POST which the script rejects with 405).
+      // keepalive lets the request complete even as we redirect to Razorpay.
+      fetch(url, { method: 'GET', mode: 'no-cors', keepalive: true });
+    } catch(err) {}
+
+    // Backup to localStorage
+    try {
+      const leads = JSON.parse(localStorage.getItem('rzp_leads') || '[]');
+      leads.push({ ...data, time: new Date().toISOString() });
+      localStorage.setItem('rzp_leads', JSON.stringify(leads));
+    } catch(err) {}
+  }
+</script>
+
+<!-- AUTO-SCROLL CAROUSEL (mobile only) -->
+<script>
+(function(){
+  const scroll  = document.getElementById('showcaseScroll');
+  const dotsWrap= document.getElementById('showcaseDots');
+  if (!scroll || !dotsWrap) return;
+
+  // Only activate on mobile-width
+  function isMobile(){ return window.innerWidth <= 640; }
+
+  let cards, dots, current = 0, timer, paused = false;
+
+  function buildDots(){
+    cards = Array.from(scroll.querySelectorAll('.sc-card'));
+    dotsWrap.innerHTML = '';
+    dots = cards.map(function(_, i){
+      const d = document.createElement('span');
+      d.className = 'dot' + (i === 0 ? ' active' : '');
+      d.addEventListener('click', function(){ goTo(i); resetTimer(); });
+      dotsWrap.appendChild(d);
+      return d;
+    });
+  }
+
+  function setActive(i){
+    dots.forEach(function(d){ d.classList.remove('active'); });
+    if (dots[i]) dots[i].classList.add('active');
+    current = i;
+  }
+
+  function goTo(i){
+    if (!cards.length) return;
+    i = (i + cards.length) % cards.length;
+    // scroll so card is centered
+    const card = cards[i];
+    const scrollLeft = card.offsetLeft - (scroll.clientWidth / 2) + (card.offsetWidth / 2);
+    scroll.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+    setActive(i);
+  }
+
+  function next(){ goTo(current + 1); }
+
+  function resetTimer(){
+    clearInterval(timer);
+    if (isMobile()) timer = setInterval(next, 2800);
+  }
+
+  // Detect manual swipe → pause 6 s then resume
+  let scrollEnd;
+  scroll.addEventListener('scroll', function(){
+    clearTimeout(scrollEnd);
+    paused = true;
+    scrollEnd = setTimeout(function(){
+      // Find which card is most visible
+      let closest = 0, minDist = Infinity;
+      cards.forEach(function(card, i){
+        const center = card.offsetLeft + card.offsetWidth / 2;
+        const scrollCenter = scroll.scrollLeft + scroll.clientWidth / 2;
+        const dist = Math.abs(center - scrollCenter);
+        if (dist < minDist){ minDist = dist; closest = i; }
+      });
+      setActive(closest);
+      paused = false;
+      resetTimer();
+    }, 300);
+  });
+
+  function init(){
+    if (!isMobile()) return;
+    buildDots();
+    resetTimer();
+  }
+
+  // Re-init on resize (e.g. rotation)
+  let resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){
+      clearInterval(timer);
+      if (isMobile()){ buildDots(); current = 0; goTo(0); resetTimer(); }
+    }, 250);
+  });
+
+  // Run after page loads
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+<!-- ── SEAT BAR ANIMATION (fires every time bar scrolls into view) ── -->
+<script>
+(function() {
+  var TOTAL_SEATS = 20;
+  var FILLED_SEATS = 18; // 18 taken → only 2 left → urgency!
+  var SPEED_MS = 130; // ms per square — slow dramatic fill
+
+  function animateBar(bar) {
+    var boxes = bar.querySelectorAll('.pb-box');
+    // Reset all to empty first
+    boxes.forEach(function(b){ b.classList.remove('done'); });
+    var count = 0;
+    var interval = setInterval(function() {
+      if (count < FILLED_SEATS && count < boxes.length) {
+        boxes[count].classList.add('done');
+        count++;
+      } else {
+        clearInterval(interval);
+      }
+    }, SPEED_MS);
+  }
+
+  // Use IntersectionObserver so animation fires EVERY time bar enters view
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        animateBar(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  // Observe all progress bars on page
+  document.querySelectorAll('.progress-bar').forEach(function(bar) {
+    observer.observe(bar);
+  });
+})();
+</script>
+
+
+</body>
+</html>
