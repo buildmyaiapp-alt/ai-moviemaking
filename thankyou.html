@@ -38,7 +38,7 @@
   (function() {
     var alreadyNotified = sessionStorage.getItem('sheet_notified');
     if (alreadyNotified) return;
-    var APPS_SCRIPT = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
+    var APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbwzdNyhQfWJvjDpYYrSq1C_ju-FJHun6USJkzlkxwrYXJE4rxR-iCwHNop4Wi9-MvvT/exec';
     try {
       // 1. Try sessionStorage first
       var pending = JSON.parse(sessionStorage.getItem('pending_lead') || '{}');
