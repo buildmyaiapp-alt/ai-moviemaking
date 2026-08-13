@@ -2067,9 +2067,11 @@
           style="width:100%;padding:14px 16px;border:2px solid #e0e0e0;border-radius:10px;font-size:15px;outline:none;font-family:inherit;"
           onfocus="this.style.borderColor='#0d1b6e'" onblur="this.style.borderColor='#e0e0e0'"/>
       </div>
-      <div style="display:none;">
-        <input id="rzp-email" type="email" placeholder="Enter your email"
-          style="width:100%;padding:14px 16px;border:2px solid #e0e0e0;border-radius:10px;font-size:15px;outline:none;font-family:inherit;"/>
+      <div style="margin-bottom:16px;">
+        <label style="font-size:13px;font-weight:700;color:#333;display:block;margin-bottom:6px;">Email *</label>
+        <input id="rzp-email" type="email" placeholder="Enter your email" required
+          style="width:100%;padding:14px 16px;border:2px solid #e0e0e0;border-radius:10px;font-size:15px;outline:none;font-family:inherit;"
+          onfocus="this.style.borderColor='#0d1b6e'" onblur="this.style.borderColor='#e0e0e0'"/>
       </div>
       <div style="margin-bottom:24px;">
         <label style="font-size:13px;font-weight:700;color:#333;display:block;margin-bottom:6px;">WhatsApp Number *</label>
@@ -2170,10 +2172,9 @@
     e.preventDefault();
     const name  = document.getElementById('rzp-name').value.trim();
     const phone = '+91' + document.getElementById('rzp-phone').value.trim();
-    const email = phone.replace('+', '') + '@aifilmcraft.in';
-    document.getElementById('rzp-email').value = email;
+    const email = document.getElementById('rzp-email').value.trim();
 
-    if (!name || !phone || phone.length < 13) {
+    if (!name || !phone || phone.length < 13 || !email || email.indexOf('@') === -1) {
       alert('Please fill all fields correctly.');
       return;
     }
