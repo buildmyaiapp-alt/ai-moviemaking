@@ -8,7 +8,7 @@
 // SHEET_NAME is read from Sheet1!B1 in the spreadsheet.
 // To change the active batch: just update that ONE cell — no script edit needed.
 const CONFIG = {
-  SHEET_ID:        'PASTE_YOUR_NEW_SHEET_ID_HERE',
+  SHEET_ID:        '1Nct9qgBSCj59H81QaNCfHebAucSPZoMOSXwsUa6atBI',
   SENDER_NAME:     'Alex — AI Moviemaking Workshop',
   WORKSHOP_DATE:   '22nd–23rd August 2026 (Sat–Sun), 11:00 AM IST both days',
   WHATSAPP_GROUP:  'https://chat.whatsapp.com/CZnWBYMQVoALFbEXbFzxOF?s=cl&p=a&ilr=0',
