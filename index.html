@@ -2197,8 +2197,8 @@
     // Fire Meta Pixel events — ONCE only
     if (typeof fbq !== 'undefined') {
       if (!sessionStorage.getItem('checkout_fired')) {
-        fbq('track', 'InitiateCheckout', { value: 99, currency: 'INR' });
-        fbq('track', 'Lead');
+        fbq('track', 'InitiateCheckout', { value: amount / 100, currency: 'INR' });
+        fbq('track', 'Lead', { value: amount / 100, currency: 'INR' });
         sessionStorage.setItem('checkout_fired', '1');
       }
     }
