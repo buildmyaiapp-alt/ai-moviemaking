@@ -15,11 +15,25 @@
   fbq('init', '1049945680950084');
   fbq('track', 'PageView');
 
-  // Fire Purchase ONCE only
+  // Read buyer identity + Razorpay payment status straight from the URL —
+  // this is what Razorpay's callback_url appends after payment, and it survives
+  // the redirect to Razorpay and back reliably, unlike sessionStorage/localStorage
+  // (which frequently doesn't survive that round trip in mobile/in-app browsers).
+  var qp = new URLSearchParams(window.location.search);
+  var urlName    = qp.get('name')  || '';
+  var urlEmail   = qp.get('email') || '';
+  var urlPhone   = qp.get('phone') || '';
+  var payStatus  = qp.get('razorpay_payment_link_status'); // 'paid' on success
+  var payId      = qp.get('razorpay_payment_id') || '';
+  var isRecording = qp.get('plan') === 'recording';
+  // If Razorpay didn't echo a status (e.g. older/direct link), don't block firing —
+  // only block when it explicitly says the payment wasn't paid.
+  var isPaid = payStatus ? (payStatus === 'paid') : true;
+
+  // Fire Purchase ONCE only, and only for an actual paid visit
   (function() {
     var alreadyFired = sessionStorage.getItem('purchase_fired');
-    if (!alreadyFired) {
-      var isRecording = window.location.search.indexOf('plan=recording') !== -1;
+    if (!alreadyFired && isPaid) {
       fbq('track', 'Purchase', {
         value: isRecording ? 199 : 99,
         currency: 'INR',
@@ -37,16 +51,23 @@
   <script>
   (function() {
     var alreadyNotified = sessionStorage.getItem('sheet_notified');
-    if (alreadyNotified) return;
+    if (alreadyNotified || !isPaid) return;
     var APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbwzdNyhQfWJvjDpYYrSq1C_ju-FJHun6USJkzlkxwrYXJE4rxR-iCwHNop4Wi9-MvvT/exec';
     try {
-      // 1. Try sessionStorage first
-      var pending = JSON.parse(sessionStorage.getItem('pending_lead') || '{}');
-      var name  = pending.name  || sessionStorage.getItem('buyer_name') || '';
-      var email = pending.email || '';
-      var phone = pending.phone || '';
+      // 1. Prefer identity carried back in the URL (reliable across the Razorpay redirect)
+      var name  = urlName;
+      var email = urlEmail;
+      var phone = urlPhone;
 
-      // 2. Fallback: read from localStorage backup (saved by index.html before redirect)
+      // 2. Fallback: sessionStorage (works when redirect happens in the same tab/storage)
+      if (!email && !phone) {
+        var pending = JSON.parse(sessionStorage.getItem('pending_lead') || '{}');
+        name  = name  || pending.name  || sessionStorage.getItem('buyer_name') || '';
+        email = email || pending.email || '';
+        phone = phone || pending.phone || '';
+      }
+
+      // 3. Fallback: localStorage backup (saved by index.html before redirect)
       if (!email && !phone) {
         try {
           var leads = JSON.parse(localStorage.getItem('rzp_leads') || '[]');
@@ -60,13 +81,11 @@
       }
 
       if (email || phone) {
-        // 3. Detect plan from URL (?plan=recording = ₹199 buyer)
-        var isRecording = window.location.search.indexOf('plan=recording') !== -1;
         var params = new URLSearchParams({
           name:      name || 'Customer',
           email:     email,
           phone:     phone,
-          paymentId: 'RAZORPAY_PAID_' + Date.now(),
+          paymentId: payId ? ('RAZORPAY_' + payId) : ('RAZORPAY_PAID_' + Date.now()),
           status:    'PAID',
           plan:      isRecording ? 'recording' : 'live',
           amount:    isRecording ? '19900' : '9900'

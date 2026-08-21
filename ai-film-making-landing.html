@@ -2209,10 +2209,22 @@
     // Build Razorpay URL with pre-filled details
     const rawPhone   = document.getElementById('rzp-phone').value.trim();
     const activeLink = bumpSelected ? PAYMENT_LINK_BUMP : PAYMENT_LINK;
+
+    // Carry buyer identity back via Razorpay's callback_url instead of relying on
+    // sessionStorage/localStorage surviving the redirect to Razorpay and back —
+    // that round trip frequently loses storage on mobile / in-app browsers.
+    const callbackUrl = 'https://buildmyaimovie.in/thankyou.html'
+      + '?name='  + encodeURIComponent(name)
+      + '&email=' + encodeURIComponent(email)
+      + '&phone=' + encodeURIComponent(rawPhone)
+      + (bumpSelected ? '&plan=recording' : '');
+
     const finalLink  = activeLink
       + '?name='    + encodeURIComponent(name)
       + '&email='   + encodeURIComponent(email)
-      + '&contact=' + encodeURIComponent(rawPhone);
+      + '&contact=' + encodeURIComponent(rawPhone)
+      + '&callback_url=' + encodeURIComponent(callbackUrl)
+      + '&callback_method=get';
 
     // REDIRECT IMMEDIATELY
     window.location.href = finalLink;
