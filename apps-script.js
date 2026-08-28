@@ -10,8 +10,14 @@
 const CONFIG = {
   SHEET_ID:        '1Nct9qgBSCj59H81QaNCfHebAucSPZoMOSXwsUa6atBI',
   SENDER_NAME:     'Alex — AI Moviemaking Workshop',
-  WORKSHOP_DATE:   '22nd–23rd August 2026 (Sat–Sun), 11:00 AM IST both days',
+  WORKSHOP_DATE:   '5th–6th September 2026 (Sat–Sun), 11:00 AM IST both days',
   WHATSAPP_GROUP:  'https://chat.whatsapp.com/CZnWBYMQVoALFbEXbFzxOF?s=cl&p=a&ilr=0',
+  // Pick any random string, put the SAME string here and in the webhook URL's
+  // ?secret=... query param when you set up the webhook in Razorpay Dashboard.
+  // Apps Script web apps can't read custom request headers, so this is how we
+  // confirm a POST actually came from us (via the URL) rather than checking
+  // Razorpay's X-Razorpay-Signature header the normal way.
+  RAZORPAY_WEBHOOK_SECRET: 'de4651dd322e0d01a3647fd56572b3d9',
 };
 
 function getActiveBatch() {
@@ -24,25 +30,83 @@ function getActiveBatch() {
 
 function doPost(e) {
   try {
+    // Razorpay webhook call — identified by the ?secret=... query param we put
+    // on the webhook URL (see CONFIG.RAZORPAY_WEBHOOK_SECRET above).
+    if (e.parameter && e.parameter.secret) {
+      return handleRazorpayWebhook(e);
+    }
+
+    // Legacy JSON-POST path (not used by the live site — it posts via GET —
+    // kept for backward compatibility).
     const data = JSON.parse(e.postData.contents);
     const { name, email, phone, paymentId, amount } = data;
     if (!name && !email && !phone) {
-      return ContentService
-        .createTextOutput(JSON.stringify({ success: false, error: 'no user data' }))
-        .setMimeType(ContentService.MimeType.JSON);
+      return jsonOut({ success: false, error: 'no user data' });
     }
     saveLead(name, email, phone, paymentId, amount);
     if (paymentId && paymentId !== 'PAYMENT_INITIATED' && paymentId !== 'LEAD') {
       sendEmail(name, email, paymentId);
     }
-    return ContentService
-      .createTextOutput(JSON.stringify({ success: true }))
-      .setMimeType(ContentService.MimeType.JSON);
+    return jsonOut({ success: true });
   } catch (err) {
-    return ContentService
-      .createTextOutput(JSON.stringify({ success: false, error: err.message }))
-      .setMimeType(ContentService.MimeType.JSON);
+    return jsonOut({ success: false, error: err.message });
   }
+}
+
+// ------------------------------------------------------------
+// RAZORPAY WEBHOOK — fires server-to-server the instant a payment is
+// captured, regardless of whether the customer's browser ever makes it
+// back to thankyou.html. This is what actually closes the "paid on
+// Razorpay but sheet still says Initiated" gap.
+// ------------------------------------------------------------
+function handleRazorpayWebhook(e) {
+  if (e.parameter.secret !== CONFIG.RAZORPAY_WEBHOOK_SECRET) {
+    return jsonOut({ success: false, error: 'bad secret' });
+  }
+  try {
+    const body = JSON.parse(e.postData.contents);
+    if (body.event !== 'payment_link.paid') {
+      // Ack anything else so Razorpay doesn't keep retrying it.
+      return jsonOut({ success: true, ignored: body.event });
+    }
+
+    const linkEntity = body.payload.payment_link.entity;
+    const payEntity  = body.payload.payment.entity;
+    const customer   = linkEntity.customer || {};
+
+    const name       = customer.name    || payEntity.email || 'Customer';
+    const email      = customer.email   || payEntity.email || '';
+    const contact    = customer.contact || payEntity.contact || '';
+    const amountPaid = linkEntity.amount_paid || payEntity.amount || 0;
+    const isRecording = amountPaid >= 19900;
+    const paymentId   = 'RAZORPAY_' + payEntity.id;
+
+    const lock = LockService.getScriptLock();
+    let result;
+    try {
+      lock.waitLock(15000);
+      result = updateLeadStatus(contact || email, paymentId, amountPaid, isRecording);
+      if (result === 'not_found') {
+        saveLead(name, email, contact, paymentId, amountPaid, isRecording);
+        result = 'updated';
+      }
+    } finally {
+      lock.releaseLock();
+    }
+    // Only email when this call actually flipped the row — avoids a duplicate
+    // email if the browser's own thankyou.html callback already did it.
+    if (result === 'updated' && email) {
+      sendEmail(name, email, paymentId, isRecording);
+    }
+    return jsonOut({ success: true });
+  } catch (err) {
+    Logger.log('webhook error: ' + err.message);
+    return jsonOut({ success: false, error: err.message });
+  }
+}
+
+function jsonOut(obj) {
+  return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON);
 }
 
 function doGet(e) {
@@ -59,17 +123,22 @@ function doGet(e) {
         // LOCK: prevents duplicate rows if this endpoint gets called twice
         // for the same payment in quick succession.
         const lock = LockService.getScriptLock();
-        let updated = false;
+        let result;
         try {
           lock.waitLock(15000);
-          updated = updateLeadStatus(p.phone || p.email, p.paymentId, paidAmount, isRecording);
-          if (!updated) {
+          result = updateLeadStatus(p.phone || p.email, p.paymentId, paidAmount, isRecording);
+          if (result === 'not_found') {
             saveLead(p.name, p.email, p.phone || '', p.paymentId, paidAmount, isRecording);
+            result = 'updated';
           }
         } finally {
           lock.releaseLock();
         }
-        sendEmail(p.name, p.email, p.paymentId, isRecording);
+        // Only email when this call actually flipped the row — avoids a duplicate
+        // email if the Razorpay webhook already marked it Paid first.
+        if (result === 'updated') {
+          sendEmail(p.name, p.email, p.paymentId, isRecording);
+        }
       } else {
         // Just initiated — save as Initiated (not Paid)
         saveLead(p.name, p.email, p.phone || '', 'INITIATED', null);
@@ -133,10 +202,11 @@ function saveLead(name, email, phone, paymentId, amount, isRecording) {
 // ------------------------------------------------------------
 // 2. UPDATE EXISTING ROW FROM INITIATED → PAID
 // ------------------------------------------------------------
+// Returns 'updated' | 'already_paid' | 'not_found'
 function updateLeadStatus(phoneOrEmail, paymentId, amount, isRecording) {
   const ss = SpreadsheetApp.openById(CONFIG.SHEET_ID);
   const sheet = ss.getSheetByName(getActiveBatch());
-  if (!sheet) return false;
+  if (!sheet) return 'not_found';
 
   const digitsOnly = String(phoneOrEmail).replace(/\D/g, '');
   const last10 = digitsOnly.slice(-10);
@@ -147,11 +217,11 @@ function updateLeadStatus(phoneOrEmail, paymentId, amount, isRecording) {
     const rowEmail = String(data[i][2]);
     const rowStatus = String(data[i][6]);
 
-    const phoneMatch = rowPhone.slice(-10) === last10;
-    const emailMatch = rowEmail === phoneOrEmail;
+    const phoneMatch = !!last10 && rowPhone.slice(-10) === last10;
+    const emailMatch = !!phoneOrEmail && rowEmail === phoneOrEmail;
 
     if (phoneMatch || emailMatch) {
-      if (rowStatus.includes('Paid')) return true;
+      if (rowStatus.includes('Paid')) return 'already_paid';
       if (rowStatus.includes('Initiated')) {
         const isRec    = isRecording || amount >= 19900;
         const amtLabel  = isRec ? '₹199' : '₹99';
@@ -163,11 +233,11 @@ function updateLeadStatus(phoneOrEmail, paymentId, amount, isRecording) {
         sheet.getRange(i + 1, 7).setValue(statusLbl);
         sheet.getRange(i + 1, 8).setValue(notesLbl);
         sheet.getRange(i + 1, 1, 1, 8).setBackground(bgClr);
-        return true;
+        return 'updated';
       }
     }
   }
-  return false;
+  return 'not_found';
 }
 
 // ------------------------------------------------------------
