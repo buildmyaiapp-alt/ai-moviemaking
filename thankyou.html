@@ -39,7 +39,7 @@
         currency: 'INR',
         content_name: 'AI Moviemaking Workshop - Sep 5-6',
         content_type: 'product'
-      });
+      }, { eventID: payId }); // must match the server-side CAPI event_id so Meta de-dupes
       sessionStorage.setItem('purchase_fired', '1');
     }
   })();

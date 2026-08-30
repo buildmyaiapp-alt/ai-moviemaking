@@ -18,6 +18,11 @@ const CONFIG = {
   // confirm a POST actually came from us (via the URL) rather than checking
   // Razorpay's X-Razorpay-Signature header the normal way.
   RAZORPAY_WEBHOOK_SECRET: 'de4651dd322e0d01a3647fd56572b3d9',
+  // Meta Conversions API — sends the Purchase event server-side the instant
+  // payment is confirmed, so it doesn't depend on the browser pixel firing
+  // (ad blockers, iOS privacy settings, closed tabs, etc).
+  META_PIXEL_ID:   '1049945680950084',
+  META_CAPI_TOKEN: 'EAAXZBZC4bTt40BSb7sKZAZC9oAfx6bmE5v5KsxoPretoZBRKaDlfIvzh6wkVfKBpoFRtRK8eANaBwZA0aZCpHxZAC9vjNwr7tWfV1fIgIgIiZBxWW73Bh9KDN1QvX9RguIJhdR83OBvYxYEVrRLkY5WxAZAZAUopw0MTtCCJGI9yXDTdasxkusnpN5d1RtT2qUmYQZDZD',
 };
 
 function getActiveBatch() {
@@ -93,10 +98,11 @@ function handleRazorpayWebhook(e) {
     } finally {
       lock.releaseLock();
     }
-    // Only email when this call actually flipped the row — avoids a duplicate
-    // email if the browser's own thankyou.html callback already did it.
+    // Only email/CAPI when this call actually flipped the row — avoids a
+    // duplicate email if the browser's own thankyou.html callback already did it.
     if (result === 'updated' && email) {
       sendEmail(name, email, paymentId, isRecording);
+      sendCAPIPurchase(payEntity.id, email, contact, isRecording);
     }
     return jsonOut({ success: true });
   } catch (err) {
@@ -107,6 +113,63 @@ function handleRazorpayWebhook(e) {
 
 function jsonOut(obj) {
   return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON);
+}
+
+// ------------------------------------------------------------
+// META CONVERSIONS API — server-side Purchase event
+// ------------------------------------------------------------
+function sha256Hex(input) {
+  const bytes = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, input, Utilities.Charset.UTF_8);
+  return bytes.map(function(b) {
+    const v = (b < 0 ? b + 256 : b).toString(16);
+    return v.length === 1 ? '0' + v : v;
+  }).join('');
+}
+
+// rawPaymentId must be the bare Razorpay payment id (e.g. "pay_XXXX"), with
+// no "RAZORPAY_" prefix — it's used as the event_id so Meta can de-duplicate
+// this against the browser-pixel Purchase event fired on thankyou.html,
+// which sends the same bare id as its eventID.
+function sendCAPIPurchase(rawPaymentId, email, phone, isRecording) {
+  try {
+    const userData = {};
+    if (email) userData.em = [sha256Hex(email.trim().toLowerCase())];
+    if (phone) {
+      let digits = String(phone).replace(/\D/g, '');
+      if (digits.length === 10) digits = '91' + digits; // assume India if no country code
+      userData.ph = [sha256Hex(digits)];
+    }
+
+    const payload = {
+      data: [{
+        event_name: 'Purchase',
+        event_time: Math.floor(Date.now() / 1000),
+        event_id: rawPaymentId,
+        action_source: 'website',
+        event_source_url: 'https://buildmyaimovie.in/thankyou.html',
+        user_data: userData,
+        custom_data: {
+          value: isRecording ? 199 : 99,
+          currency: 'INR',
+          content_name: 'AI Moviemaking Workshop',
+          content_type: 'product'
+        }
+      }]
+    };
+
+    const url = 'https://graph.facebook.com/v19.0/' + CONFIG.META_PIXEL_ID
+      + '/events?access_token=' + CONFIG.META_CAPI_TOKEN;
+
+    const resp = UrlFetchApp.fetch(url, {
+      method: 'post',
+      contentType: 'application/json',
+      payload: JSON.stringify(payload),
+      muteHttpExceptions: true
+    });
+    Logger.log('CAPI response: ' + resp.getResponseCode() + ' ' + resp.getContentText());
+  } catch (err) {
+    Logger.log('CAPI error: ' + err.message);
+  }
 }
 
 function doGet(e) {
@@ -134,10 +197,11 @@ function doGet(e) {
         } finally {
           lock.releaseLock();
         }
-        // Only email when this call actually flipped the row — avoids a duplicate
-        // email if the Razorpay webhook already marked it Paid first.
+        // Only email/CAPI when this call actually flipped the row — avoids a
+        // duplicate email if the Razorpay webhook already marked it Paid first.
         if (result === 'updated') {
           sendEmail(p.name, p.email, p.paymentId, isRecording);
+          sendCAPIPurchase(String(p.paymentId).replace(/^RAZORPAY_/, ''), p.email, p.phone, isRecording);
         }
       } else {
         // Just initiated — save as Initiated (not Paid)
