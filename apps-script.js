@@ -11,7 +11,7 @@ const CONFIG = {
   SHEET_ID:        '1Nct9qgBSCj59H81QaNCfHebAucSPZoMOSXwsUa6atBI',
   SENDER_NAME:     'Alex — AI Moviemaking Workshop',
   WORKSHOP_DATE:   '21st–22nd November 2026 (Sat–Sun), 10:00 AM IST both days',
-  WHATSAPP_GROUP:  'https://chat.whatsapp.com/HwhOIYyIh5i5yfrL3JxlkU?s=cl&p=a&iam=2',
+  WHATSAPP_GROUP:  'https://chat.whatsapp.com/G5IVqpcWbUOADz7hpLe6dg?s=sh&p=a&iam=2',
   // Pick any random string, put the SAME string here and in the webhook URL's
   // ?secret=... query param when you set up the webhook in Razorpay Dashboard.
   // Apps Script web apps can't read custom request headers, so this is how we
