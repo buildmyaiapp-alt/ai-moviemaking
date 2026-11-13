@@ -10,7 +10,7 @@
 const CONFIG = {
   SHEET_ID:        '1Nct9qgBSCj59H81QaNCfHebAucSPZoMOSXwsUa6atBI',
   SENDER_NAME:     'Alex — AI Moviemaking Workshop',
-  WORKSHOP_DATE:   '14th–15th November 2026 (Sat–Sun), 10:00 AM IST both days',
+  WORKSHOP_DATE:   '21st–22nd November 2026 (Sat–Sun), 10:00 AM IST both days',
   WHATSAPP_GROUP:  'https://chat.whatsapp.com/HwhOIYyIh5i5yfrL3JxlkU?s=cl&p=a&iam=2',
   // Pick any random string, put the SAME string here and in the webhook URL's
   // ?secret=... query param when you set up the webhook in Razorpay Dashboard.
